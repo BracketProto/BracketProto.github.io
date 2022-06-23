@@ -1,182 +1,274 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta content="BracketProto" property="og:title" />
-        <meta content="Beep boop" property="og:description" />
-        <meta content="https://bracketproto.com/" property="og:url" />
-        <meta content="#00e5ff" data-react-helmet="true" name="theme-color" />
-        <style>
-            body{
-                background-image: url("./Assets/images/mainbackground.png");
-                background-size: 100%;
-                background-color: #1a0e0f;
-                background-repeat: no-repeat;
-                font-family: Arial, Helvetica, sans-serif;
-                color: white;
-                margin: 0;
-                padding: 0;
-            }
-            .header{
-                text-align: left;
-                display: inline;
-                overflow: hidden;
-            }
-            .headercenter{
-                transform: translateX(-50%);
-                position: absolute;
-                left: 50%; 
-                top: 2.5%;
-                display: inline;
-                font-size: 20px;
-                
-            }
-            a, a:hover, a:focus, a:active {
-                text-decoration: none;
-                color: inherit;
-            }
-            .info{
-                background: rgba(0, 0, 0, 0.103);
-                backdrop-filter: blur(50px);
-                width: 50%;
-                font-size: 20px;
-                box-shadow: 10px -2px 10px rgba(0, 0, 0, 0.103);
-                display: inline-block;
-            }
-            .section
-            {
-                width: 100%;
-                height: 100%;
-                background-color: #36393f;
-                text-align: center;
-            }
-            .buttondiscord{
-                background-color: #5865f2;
-                font-size: 25px;
-            }
-            .section2{
-                width: 100%;
-                height: 100%;
-                background-color: #FF424D;
-                text-align: center;
-            }
-            .buttonpatreon{
-                background-color: rgba(0, 0, 0, 0);
-                font-size: 25px;
-                color: white;
-                text-decoration: underline;
-            }
-            .section3{
-                width: 100%;
-                height: 100%;
-                background-color: #9146ff;
-                text-align: center;
-            }
-            *{
-                margin:	0% 0% 0% 0%;
-                padding: 0;
-            }
-            .section4{
-                width: 100%;
-                height: 100%;
-                background-color: black;
-                text-align: center;
-                color: white;
-            }
-        </style>
-    </head>
-    <body>
-        <h1 class="header">{ B R A C K E T }</h1><p class="headercenter"><a href="#">Home</a> | <a href="#info">Info</a> | <a href="#discord">Discord</a> | <a href="#donate">Donate</a> | <a href="#twitch">Stream</a></p>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <div class="info" id="info">
-            <h1>Information About Me!</h1>
-            <p>I'm Bracket!</p>
-            <br>
-            <p>I'm a furry from the UK that makes some <br> content and makes projects such as websites, games, and <br> discord bots!</p>
-            <br>
-            <iframe src="https://lanyard.cnrad.dev/api/530036821707718678" frameBorder="0" height="250px" width="800px"></iframe>
-            <br>
-            <br>
-        </div>
-        <div class="section" id="discord">
-            <h1 style="text-align: center;">Discord</h1>
+<head>
+  <title>BracketProto</title>
+  <link rel="icon" type="image/png" href="./img/BracketSit.png" sizes="96x96">
+<meta name="title" content="BracketProto">
+<meta name="description" content="A british furry protogen that codes, creates games, and creates content!">
 
-            <p>Join our discord and engage with the community!</p>
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bracketproto.com/">
+<meta property="og:title" content="BracketProto">
+<meta property="og:description" content="A british furry protogen that codes, creates games, and creates content!">
+<meta property="og:image" content="./Assets/images/backgroundimg.png">
 
-            <a class="buttondiscord" href="https://discord.gg/9EWz4tekRR">Join the Server</a>
-            <widgetbot
-            server='929955650237251594'
-            channel='929955830911086673'
-            width=100%
-            height="500"
-          ></widgetbot>
-          <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
-            <br>
-            <br>
-            <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-        </div>
-        <div class="section2" id="donate">
-            <img src="./Assets/images/Digital-Patreon-Wordmark_White.png" width="20%">
-            <p>Want to support me? Head on over to my patreon!</p>
-            <br>
-            <a class="buttonpatreon" href="https://www.patreon.com/bracketproto">Patreon Page</a>
-            <br>
-            <br>
-            <p>OR</p>
-            <br>
-            <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#29abe0', 'F2F580IVD');kofiwidget2.draw();</script> 
-            <br>
-            <br>
-        </div>
-        <div class="section3" id="twitch">
-            <h1>Twitch Stream</h1>
-            <p>twitch.tv/bracketproto</p>
-            <br>
-            <div id="twitch-embed"></div>
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://bracketproto.com/">
+<meta property="twitter:title" content="BracketProto">
+<meta property="twitter:description" content="A british furry protogen that codes, creates games, and creates content!">
+<meta property="twitter:image" content="./Assets/images/backgroundimg.png">
+  <script src=
+  "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+      </script>
+<style>
+  body::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+body::-webkit-scrollbar-track {
+  background: rgb(0, 0, 0);        /* color of the tracking area */
+}
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(103, 103, 103);    /* color of the scroll thumb */
+  border-radius: 0px;       /* roundness of the scroll thumb */
+  border: 0px solid rgb(255, 255, 255);  /* creates padding around scroll thumb */
+}
+  body{
+    font-family: Arial;
+    background: linear-gradient(45deg, rgba(0,0,0,1) 0%, rgba(0,0,130,1) 35%, rgba(0,106,131,1) 100%);
+    color: white;
+    background-size: 200% 200%;
+    animation: gradient 15s ease infinite;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+*{
+    margin:	0;
+    padding: 0;
+    cursor: none;
+}
+.section{
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  color: black;
+  text-align: center;
+}
+.section2{
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background-color: #36393f;
+  color: white;
+}
+.section3{
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background-color: #1c1c1c;
+  color: white;
+}
+.section4{
+  text-align: center;
+  width: 100%;
+  height: 25%;
+  background-color: #313131;
+  color: white;
+}
+.section5{
+  text-align: center;
+  width: 100%;
+  height: 25%;
+  background-color: #000000;
+  color: white;
+}.imgclass {
+height: 50px;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+  .headertext{
+    overflow: hidden; 
+    color: #00ffff;
+    font-size: 50px;
+    border-right: 5px solid white;
+    border-image: linear-gradient(transparent 10%, white 10% 90%, transparent 90%) 0 0 0 1 * 3px;
+    white-space: nowrap;
+    letter-spacing: .15em;
+    animation: fx 3.5s forwards;
+}
+.smalltext{
+    overflow: hidden; 
+    color: #00ffff;
+    font-size: 15px;
+    border-right: 5px solid white;
+    border-image: linear-gradient(transparent 10%, white 10% 90%, transparent 90%) 0 0 0 1 * 3px;
+    white-space: nowrap;
+    letter-spacing: .15em;
+    animation: fx 6s forwards;
+}
+.sameline{
+  position:absolute; 
+  top: 175px; 
+  right: 0%;
+  overflow : auto;
+}
+.imgclass2{
+  width: 100px;
+}
+  @keyframes fx {
+  from { width: 0 }
+  to { width: 100%; border: none;}
+}
+  .btn{
+    border: none;
+    background-color: #00AFFF;
+    color: white;
+    font-size: 25px;
+    border-radius: 25px;
+    text-decoration: none;
+}
+@keyframes heartbeat {
+  0% { 
+    transform: translate(-50%, -50%) scale(1); 
+  }
+  50% { 
+    transform: translate(-50%, -50%) scale(1.5); 
+  }
+  100% { 
+    transform: translate(-50%, -50%) scale(1); 
+  }
 
-            <script src="https://embed.twitch.tv/embed/v1.js"></script>
+}
 
-            <!-- Create a Twitch.Embed object that will render within the "twitch-embed" element. -->
-            <script type="text/javascript">
-              var embed = new Twitch.Embed("twitch-embed", {
-                width: 854,
-                height: 480,
-                channel: "bracketproto",
-                layout: "video",
-                autoplay: true,
-                // Only needed if this page is going to be embedded on other websites
-              });
-        
-              embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
-                var player = embed.getPlayer();
-                player.play();
-              });
-            </script>
-            <br>
-            <br>
-            <br>
-        </div>
-        <div class="section4">
-            <h1>Other Links</h1>
-            <a href="https://twitch.tv/bracketproto">
-                <img src="./Assets/images/TwitchGlitchWhite.png" alt="Twitch" style="width:2.5%;height:2.5%px;border:0">
-              </a>             <a href="https://twitter.com/BracketProto">
-                <img src="./Assets/images/2021 Twitter logo - white.png" alt="Twitter" style="width:2.5%;height:2.5%px;border:0">
-              </a>             <a href="https://youtube.com/bracketproto">
-                <img src="./Assets/images/yt_icon_mono_dark.png" alt="Youtube" style="width:2.5%;height:2.5%px;border:0">
-              </a>             <a href="https://discord.gg/9EWz4tekRR">
-                <img src="./Assets/images/icon_clyde_white_RGB.png" alt="Discord" style="width:2.5%;height:2.5%px;border:0">
-              </a>
-              <br>
-              2021-2022 BracketProto © All Rights Reserved.
-        </div> 
-    </body>
-</html>
+h1:hover.custommouse{
+
+  animation: heartbeat 2s infinite;  
+}
+.custommouse{
+  background-color: #ffffff;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  z-index: 200;
+   
+  mix-blend-mode:difference;
+}
+.custommouse2{
+  background-color: #ffffff00;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid white;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  z-index: 200;
+   
+  mix-blend-mode:difference;
+}
+
+</style>
+</head>
+<body>
+</body>
+<div id="root">
+  <div>
+    <p>
+      Welcome to wait for page to load.
+    </p>
+  </div>
+</div>
+<script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> 
+
+<script type='text/javascript' src="script.js"></script>
+<script>
+  kofiwidget2.init('Support Me on Ko-fi', '#29abe0', 'F2F580IVD');
+  kofiwidget2.draw();
+  document.addEventListener("DOMContentLoaded", function(event) { 
+  setTimeout( () =>{
+  var elements = document.getElementsByClassName('kofi-button'); var requiredElement = elements[0];
+  document.getElementById("4").appendChild(requiredElement);
+  }, 2000);
+  });
+  </script>
+  
+<div class="custommouse"></div>
+<div class="custommouse2"></div>
+
+<script>
+const custommouse = document.querySelector("div.custommouse");
+const custommouse2 = document.querySelector("div.custommouse2");
+let speed = 1;
+let speed2 = 0.5;
+
+let mouseX = window.innerWidth / 2;
+let mouseY = window.innerHeight / 2;
+
+let mouseX2 = window.innerWidth / 2;
+let mouseY2 = window.innerHeight / 2;
+
+let cmX = 0;
+let cmY = 0;
+
+let cmX2 = 0;
+let cmY2 = 0;
+
+function animate(){
+  
+  let distX = mouseX - cmX;
+  let distY = mouseY - cmY;
+  let distX2 = mouseX2 - cmX2;
+  let distY2 = mouseY2 - cmY2;
+  
+  
+  cmX = cmX + (distX * speed);
+  cmY = cmY + (distY * speed);
+  cmX2 = cmX2 + (distX2 * speed2);
+  cmY2 = cmY2 + (distY2 * speed2);
+  
+  custommouse.style.left = cmX + "px";
+  custommouse.style.top = cmY + "px";
+  custommouse2.style.left = cmX2 + "px";
+  custommouse2.style.top = cmY2 + "px";
+  
+  requestAnimationFrame(animate);
+}
+animate();
+
+document.addEventListener('mousemove', e => {
+  mouseX = e.pageX;
+  mouseY = e.pageY;
+  mouseX2 = e.pageX;
+  mouseY2 = e.pageY;
+})
+</script>
+<script>
+var isMobile = navigator.userAgentData.mobile;
+if(isMobile = true)
+{
+  delete(document.getElementById("root"));
+
+}
+</script>
+</body>
