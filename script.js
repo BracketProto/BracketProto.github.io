@@ -3,8 +3,29 @@
 var root = ReactDOM.createRoot(document.getElementById("root"));
 var value = 0;
 var title = "{BracketProto}";
-var version = "0.0.1";
+var version = "0.0.2";
 var subtitle = "{PROJBRCKT V" + version + " | BracketProto.com }" 
+
+
+function readTextFile(file, callback) {
+  var rawFile = new XMLHttpRequest();
+  rawFile.overrideMimeType("application/json");
+  rawFile.open("GET", file, true);
+  rawFile.onreadystatechange = function() {
+      if (rawFile.readyState === 4 && rawFile.status == "200") {
+          callback(rawFile.responseText);
+      }
+  }
+  rawFile.send(null);
+}
+
+//usage:
+readTextFile("./events.json", function(text){
+  var data = JSON.parse(text);
+  console.log(data);
+});
+
+
 function update() {
   value = value + 1;
   var element = /*#__PURE__*/ React.createElement(
@@ -37,12 +58,21 @@ function update() {
       {
         class: "sameline"
       },
+            /*#__PURE__*/ React.createElement(
+              "h2",
+              null,
+              "About me"
+      ),
+      /*#__PURE__*/ React.createElement(
+        "p",
+        null,
+        "Hi, I'm Bracket!"
+      ),
       /*#__PURE__*/ React.createElement(
         "p",
         null,
         "I'm a furry from the UK that makes some content"
       ),
-      /*#__PURE__*/ React.createElement("br", null),
       /*#__PURE__*/ React.createElement(
         "p",
         null,
@@ -77,6 +107,17 @@ function update() {
     /*#__PURE__*/ React.createElement("br", null),
     /*#__PURE__*/ React.createElement("br", null),
     /*#__PURE__*/ React.createElement("br", null),
+      /*#__PURE__*/ React.createElement(
+        "div",
+        {
+          class: "events"
+        },
+        /*#__PURE__*/ React.createElement(
+        "h1",
+        null,
+        "Events"
+      ),
+    ),
     /*#__PURE__*/ React.createElement(
       "div",
       {

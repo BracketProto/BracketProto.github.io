@@ -49,6 +49,13 @@ body::-webkit-scrollbar-thumb {
     padding: 0;
     cursor: none;
 }
+.events{
+  text-align: center;
+  width: 100%;
+  height: 50%;
+  background-color: #36393f;
+  color: white;
+}
 .section{
   width: 100%;
   height: 100%;
@@ -74,7 +81,7 @@ body::-webkit-scrollbar-thumb {
   text-align: center;
   width: 100%;
   height: 25%;
-  background-color: #313131;
+  background-color: #36393f;
   color: white;
 }
 .section5{
@@ -164,7 +171,7 @@ h1:hover.custommouse{
   position: absolute;
   top: 0;
   left: 0;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate3d(-50%, -50%, 0);
   z-index: 200;
    
   mix-blend-mode:difference;
@@ -179,8 +186,9 @@ h1:hover.custommouse{
   position: absolute;
   top: 0;
   left: 0;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate3d(-50%, -50%, 0);
   z-index: 200;
+  
    
   mix-blend-mode:difference;
 }
@@ -256,11 +264,11 @@ function animate(){
 }
 animate();
 
-document.addEventListener('mousemove', e => {
-  mouseX = e.pageX;
-  mouseY = e.pageY;
-  mouseX2 = e.pageX;
-  mouseY2 = e.pageY;
+document.addEventListener('mousemove', event => {
+  mouseX = event.pageX;
+  mouseY = event.pageY;
+  mouseX2 = event.pageX;
+  mouseY2 = event.pageY;
 })
 </script>
 <script>
