@@ -21,9 +21,8 @@ function readTextFile(file, callback) {
 
 //usage:
 readTextFile("./events.json", function(text){
-  if(Object.keys(text).length != 0)
-  {
   var events= JSON.parse(text);
+  if(events.length > 0){
   console.log(events);
   }
 });
