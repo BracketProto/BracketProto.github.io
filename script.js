@@ -2,6 +2,7 @@
 
 var root = ReactDOM.createRoot(document.getElementById("root"));
 var value = 0;
+var i = 0;
 var title = "{BracketProto}";
 var version = "0.0.2";
 var subtitle = "{PROJBRCKT V" + version + " | BracketProto.com }";
@@ -44,10 +45,9 @@ readTextFile("./events.json", function (text) {
     console.log(events);
   }
 });
-var i = 0;
 function update() {
   if (i < events.events[0].event.length) {
-      i++;
+      i = i + 1;
       /*#__PURE__*/
       React.createElement("h1", null, events.events[0].event[i].name),
       /*#__PURE__*/
