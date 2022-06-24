@@ -1,7 +1,7 @@
 {
    "events":[
       {
-         "event":[
+         "event1":[
             {
                "id":0,
                "name":"EventName",

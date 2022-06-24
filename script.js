@@ -135,21 +135,21 @@ function update() {
         null,
         "Events"
       ),
-      events.events.event.forEach(eventid => {
+      events.events[0].forEach(eventid => {
       /*#__PURE__*/ React.createElement(
         "h1",
         null,
-        events.events.event[eventid].name
+        events.events[eventid].name
       ),
       /*#__PURE__*/ React.createElement(
         "h1",
         null,
-        events.events.event[eventid].description
+        events.events[eventid].description
       ),
         /*#__PURE__*/ React.createElement(
           "h1",
           null,
-          events.events.event[eventid].dateinfo
+          events.events[eventid].dateinfo
         )
       }),
     ),
