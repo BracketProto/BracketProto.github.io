@@ -45,6 +45,23 @@ readTextFile("./events.json", function(text){
 });
 
 function update() {
+  for (i = 0; i <  events.events[0].event.Length; i++) {
+    /*#__PURE__*/ React.createElement(
+      "h1",
+      null,
+      events.events[0].event[i].name
+    ),
+    /*#__PURE__*/ React.createElement(
+      "h1",
+      null,
+      events.events[0].event[i].description
+    ),
+      /*#__PURE__*/ React.createElement(
+        "h1",
+        null,
+        events.events[0].event[i].dateinfo
+      )
+    };
   value = value + 1;
   var element = /*#__PURE__*/ React.createElement(
     "div",
@@ -134,24 +151,7 @@ function update() {
         "h1",
         null,
         "Events"
-      )))
-      for (i = 0; i <  events.events[0].event.Length; i++) {
-      /*#__PURE__*/ React.createElement(
-        "h1",
-        null,
-        events.events[0].event[i].name
-      ),
-      /*#__PURE__*/ React.createElement(
-        "h1",
-        null,
-        events.events[0].event[i].description
-      ),
-        /*#__PURE__*/ React.createElement(
-          "h1",
-          null,
-          events.events[0].event[i].dateinfo
-        )
-      };
+      )),
     /*#__PURE__*/ React.createElement(
       "div",
       {
