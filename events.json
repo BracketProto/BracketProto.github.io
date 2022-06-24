@@ -1,11 +1,14 @@
 {
    "events":[
       {
-         "0":[
-            "name": "TestName",
-            "description": "Description Test",
-	       "date": "24/06/22"
-         ]           
+         "event":[
+            {
+               "id":0,
+               "name":"EventName",
+               "description":"Event Description",
+               "dateinfo": "00/00/00 12:00 AM BST"
+            }
+         ]
       }
    ]
 }

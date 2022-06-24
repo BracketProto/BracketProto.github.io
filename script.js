@@ -122,22 +122,24 @@ function update() {
         null,
         "Events"
       ),
-      events.forEach(eventid => {
+      events.events.event.forEach(eventid => {
       /*#__PURE__*/ React.createElement(
         "h1",
         null,
-        events[eventid].name
+        events.events.event[eventid].name
       ),
+      events.events.event.forEach(eventid => {
       /*#__PURE__*/ React.createElement(
         "h1",
         null,
-        events[eventid].description
+        events.events.event[eventid].description
       ),
-      /*#__PURE__*/ React.createElement(
-        "h1",
-        null,
-        events[eventid].date
-      )
+      events.events.event.forEach(eventid => {
+        /*#__PURE__*/ React.createElement(
+          "h1",
+          null,
+          events.events.event[eventid].dateinfo
+        )
       }),
     ),
     /*#__PURE__*/ React.createElement(
