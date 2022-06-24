@@ -6,7 +6,7 @@ var i = 0;
 var title = "{BracketProto}";
 var version = "0.0.2";
 var subtitle = "{PROJBRCKT V" + version + " | BracketProto.com }";
-var events;
+var _events;
 
 function readTextFile(file, callback) {
   var rawFile = new XMLHttpRequest();
@@ -23,9 +23,9 @@ function readTextFile(file, callback) {
 } //usage:
 
 readTextFile("./events.json", function (text) {
-  events = JSON.parse(text);
+  _events = JSON.parse(text);
 
-  if (events.length == 0) {
+  if (_events.length == 0) {
     events = {
       "events":[
          {
@@ -40,20 +40,20 @@ readTextFile("./events.json", function (text) {
          }
       ]
    }
-    console.log(events);
+    console.log(_events);
   } else {
-    console.log(events);
+    console.log(_events);
   }
 });
 function update() {
-  if (i < events.events[0].event.length) {
+  if (i < _events.events[0].event.length) {
       i = i + 1;
       /*#__PURE__*/
-      React.createElement("h1", null, events.events[0].event[events.events[0].event[i].id].name),
+      React.createElement("h1", null, _events.events[0].event[_events.events[0].event[i].id].name),
       /*#__PURE__*/
-      React.createElement("h1", null, events.events[0].event[events.events[0].event[i].id].description),
+      React.createElement("h1", null, _events.events[0].event[_events.events[0].event[i].id].description),
       /*#__PURE__*/
-      React.createElement("h1", null, events.events[0].event[events.events[0].event[i].id].dateinfo);
+      React.createElement("h1", null, _events.events[0].event[_events.events[0].event[i].id].dateinfo);
   }
 
   value = value + 1;
