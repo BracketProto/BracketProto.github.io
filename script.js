@@ -22,7 +22,6 @@ function readTextFile(file, callback) {
 //usage:
 readTextFile("./events.json", function(text){
   var data = JSON.parse(text);
-  //test
   console.log(data);
 });
 
