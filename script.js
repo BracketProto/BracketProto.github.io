@@ -30,6 +30,7 @@ readTextFile("./events.json", function (text) {
          {
             "event":[
                {
+                  "id": 0,
                   "name":"EventName",
                   "description":"Event Description",
                   "dateinfo":"00/00/00 12:00 AM BST"
