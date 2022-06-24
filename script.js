@@ -22,7 +22,7 @@ function readTextFile(file, callback) {
 //usage:
 readTextFile("./events.json", function(text){
   events = JSON.parse(text);
-  if(Object.entries(events).length === 0){
+  if(Object.entries(events).length > 0){
     events = {"Event1": "Bracket is not hosting any current events"};
     console.log(events);
   }
