@@ -128,13 +128,11 @@ function update() {
         null,
         events.events.event[eventid].name
       ),
-      events.events.event.forEach(eventid => {
       /*#__PURE__*/ React.createElement(
         "h1",
         null,
         events.events.event[eventid].description
       ),
-      events.events.event.forEach(eventid => {
         /*#__PURE__*/ React.createElement(
           "h1",
           null,
