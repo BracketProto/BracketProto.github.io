@@ -23,7 +23,20 @@ function readTextFile(file, callback) {
 readTextFile("./events.json", function(text){
   events = JSON.parse(text);
   if(events.length == 0){
-    events = {"Event1": "Bracket is not hosting any current events"};
+    events = {
+      "events":[
+         {
+            "event":[
+               {
+                  "id":0,
+                  "name":"No events",
+                  "description":"Please check back later for any events",
+                  "dateinfo": ""
+               }
+            ]
+         }
+      ]
+   }
     console.log(events);
   }
   else{
