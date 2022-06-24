@@ -49,7 +49,7 @@ readTextFile("./events.json", function (text) {
 });
 
 function update() {
-  for (i = 0; i < events.events[0].event.Length; i++) {
+  for (var i = 0; i < events.events[0].event.Length; i++) {
     /*#__PURE__*/
     React.createElement("h1", null, events.events[0].event[i].name),
       /*#__PURE__*/ React.createElement(
