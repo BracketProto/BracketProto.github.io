@@ -49,7 +49,6 @@ function update() {
   if (i < _events.events[0].event.length) {
       i = i + 1;
       /*#__PURE__*/
-      _container.world[0].object1[_container.world[0].object1[i].id].X
       React.createElement("h1", null, _events.events[0].event[i].name),
       /*#__PURE__*/
       React.createElement("h1", null, _events.events[0].event[i].description),
