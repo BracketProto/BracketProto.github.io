@@ -8,7 +8,6 @@ var subtitle = "{PROJBRCKT V" + version + " | BracketProto.com }"
 
 
 
-
 function update() {
   value = value + 1;
   var element = /*#__PURE__*/ React.createElement(
