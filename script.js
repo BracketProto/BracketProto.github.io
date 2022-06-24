@@ -5,7 +5,7 @@ var value = 0;
 var title = "{BracketProto}";
 var version = "0.0.2";
 var subtitle = "{PROJBRCKT V" + version + " | BracketProto.com }" 
-var events = {"Event1": "Bracket is not hosting any current events"};
+var events = {};
 
 function readTextFile(file, callback) {
   var rawFile = new XMLHttpRequest();
