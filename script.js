@@ -151,8 +151,7 @@ function update() {
           null,
           events.events[0].event[i].dateinfo
         )
-      }),
-    ),
+      };
     /*#__PURE__*/ React.createElement(
       "div",
       {
@@ -304,8 +303,7 @@ React.createElement(
     })),
   /*#__PURE__*/ React.createElement("br", null),
   "2021-2022 BracketProto \xA9 All Rights Reserved."
-)
-  );
+  )
   root.render(element);
 }
 
