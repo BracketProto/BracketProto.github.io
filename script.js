@@ -5,8 +5,28 @@ var value = 0;
 var title = "{BracketProto}";
 var version = "0.0.2";
 var subtitle = "{PROJBRCKT V" + version + " | BracketProto.com }" 
+var events = {"Event1": "Bracket is not hosting any current events"};
 
+function readTextFile(file, callback) {
+  var rawFile = new XMLHttpRequest();
+  rawFile.overrideMimeType("application/json");
+  rawFile.open("GET", file, true);
+  rawFile.onreadystatechange = function() {
+      if (rawFile.readyState === 4 && rawFile.status == "200") {
+          callback(rawFile.responseText);
+      }
+  }
+  rawFile.send(null);
+}
 
+//usage:
+readTextFile("./events.json", function(text){
+  if(Object.keys(text).length != 0)
+  {
+  var events= JSON.parse(text);
+  console.log(events);
+  }
+});
 
 function update() {
   value = value + 1;
