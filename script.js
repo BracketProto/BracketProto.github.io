@@ -26,19 +26,22 @@ readTextFile("./events.json", function (text) {
 
   if (events.length == 0) {
     events = {
-      events: [
-        {
-          event: [
-            {
-              id: 0,
-              name: "No events",
-              description: "Please check back later for any events",
-              dateinfo: ""
-            }
-          ]
-        }
+      "events":[
+         {
+            "event":[
+               {
+                  "event1":[
+                     {
+                        "name":"EventName",
+                        "description":"Event Description",
+                        "dateinfo":"00/00/00 12:00 AM BST"
+                     }
+                  ]
+               }
+            ]
+         }
       ]
-    };
+   };
     console.log(events);
   } else {
     console.log(events);
