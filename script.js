@@ -49,11 +49,11 @@ function update() {
   if (i < _events.events[0].event.length) {
       i = i + 1;
       /*#__PURE__*/
-      React.createElement("h1", null, _events.events[0].event[i].name),
+      React.createElement("h1", null, _events.events[i].event[0].name),
       /*#__PURE__*/
-      React.createElement("h1", null, _events.events[0].event[i].description),
+      React.createElement("h1", null, _events.events[i].event[0].description),
       /*#__PURE__*/
-      React.createElement("h1", null, _events.events[0].event[i].dateinfo);
+      React.createElement("h1", null, _events.events[i].event[0].dateinfo);
   }
 
   value = value + 1;
