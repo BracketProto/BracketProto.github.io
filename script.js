@@ -21,9 +21,12 @@ function readTextFile(file, callback) {
 
 //usage:
 readTextFile("./events.json", function(text){
-  var events= JSON.parse(text);
-  if(events.length > 0){
-  console.log(events);
+  events = JSON.parse(text);
+  if(Object.entries(events).length === 0){
+    events = {"Event1": "Bracket is not hosting any current events"};
+  }
+  else{
+    console.log(events);
   }
 });
 
