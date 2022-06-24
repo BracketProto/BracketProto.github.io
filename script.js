@@ -5,7 +5,7 @@ var value = 0;
 var title = "{BracketProto}";
 var version = "0.0.2";
 var subtitle = "{PROJBRCKT V" + version + " | BracketProto.com }" 
-var events = {};
+var events;
 
 function readTextFile(file, callback) {
   var rawFile = new XMLHttpRequest();
@@ -27,7 +27,7 @@ readTextFile("./events.json", function(text){
     console.log(events);
   }
   else{
-    console.log(events);
+    console.log(events);  
   }
 });
 
