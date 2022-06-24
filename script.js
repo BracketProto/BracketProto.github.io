@@ -46,8 +46,8 @@ readTextFile("./events.json", function (text) {
   }
 });
 function update() {
+  i = i + 1;
   if (i < _events.events[0].event.length) {
-      i = i + 1;
       /*#__PURE__*/
       React.createElement("h1", null, _events.events[i].event[0].name),
       /*#__PURE__*/
