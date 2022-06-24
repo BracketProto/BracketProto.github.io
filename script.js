@@ -134,22 +134,22 @@ function update() {
         "h1",
         null,
         "Events"
-      ),
-      events.events[0].event.forEach(_event => {
+      )))
+      for (i = 0; i <  events.events[0].event.Length; i++) {
       /*#__PURE__*/ React.createElement(
         "h1",
         null,
-        _event.name
+        events.events[0].event[i].name
       ),
       /*#__PURE__*/ React.createElement(
         "h1",
         null,
-        _event.description
+        events.events[0].event[i].description
       ),
         /*#__PURE__*/ React.createElement(
           "h1",
           null,
-          _event.dateinfo
+          events.events[0].event[i].dateinfo
         )
       }),
     ),
