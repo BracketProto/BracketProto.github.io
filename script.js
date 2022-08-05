@@ -106,7 +106,7 @@ function update() {
       /*#__PURE__*/ React.createElement("p", null, "Abandoned in one of the many wars of the primogenitors, the rare protogens of the Kepler-22 system were able to break free from the primogenitors using arcites."),
       /*#__PURE__*/ React.createElement("p", null, "The protogens of the Kepler-22 war started a colony on the habitable planet Kepler-22b called KEP-1B in which the protogens were able to gain conscious free will."),
       /*#__PURE__*/ React.createElement("br", null),
-      /*#__PURE__*/ React.createElement("p", null, "In KEP-1B, Bracket has the role of a programmer to help create spacecrafts and augmentations to other protogens with space exploration of the Kepler-22 system.")
+      /*#__PURE__*/ React.createElement("p", null, "In KEP-1B, Bracket has the role of a programmer to help create spacecrafts and augmentations to other protogens with to help with space exploration of the Kepler-22 system.")
     ),
     /*#__PURE__*/ React.createElement(
       "div",
