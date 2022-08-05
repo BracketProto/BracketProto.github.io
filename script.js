@@ -271,9 +271,7 @@ function update() {
           src: "./Assets/images/discord.png",
           alt: "Youtube"
         })
-      ),
-      /*#__PURE__*/ React.createElement("br", null),
-      "2021-2022 BracketProto \xA9 All Rights Reserved."
+      )
     )
   );
   root.render(element);
