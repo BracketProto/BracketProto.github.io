@@ -49,16 +49,16 @@ body::-webkit-scrollbar-thumb {
     padding: 0;
     cursor: none;
 }
-.events{
-  text-align: center;
+.lore{
+  text-align: left;
   width: 100%;
-  height: 50%;
+  height: 75%;
   background-color: #36393f;
   color: white;
 }
 .section{
   width: 100%;
-  height: 100%;
+  height: 120%;
   background-color: white;
   color: black;
   text-align: center;
@@ -212,6 +212,7 @@ h1:hover.custommouse{
 
 <script type='text/javascript' src="script.js"></script>
 <script>
+if(! /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
   kofiwidget2.init('Support Me on Ko-fi', '#29abe0', 'F2F580IVD');
   kofiwidget2.draw();
   document.addEventListener("DOMContentLoaded", function(event) { 
@@ -220,6 +221,7 @@ h1:hover.custommouse{
   document.getElementById("4").appendChild(requiredElement);
   }, 2000);
   });
+  }
   </script>
   
 <div class="custommouse"></div>
@@ -273,11 +275,13 @@ document.addEventListener('mousemove', event => {
 })
 </script>
 <script>
-var isMobile = navigator.userAgentData.mobile;
-if(isMobile = true)
-{
-  delete(document.getElementById("root"));
-
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    document.getElementById('root').style.display = 'none';
+    let myElm = document.createElement("h1");
+	myElm.innerText = 'Please load the site on desktop.';
+	myElm.style.textAlign = "center";
+	myElm.style.fontSize = "500%";
+    document.body.appendChild(myElm);	
 }
 </script>
 </body>

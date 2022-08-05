@@ -2,60 +2,13 @@
 
 var root = ReactDOM.createRoot(document.getElementById("root"));
 var value = 0;
-var i = 0;
 var title = "{BracketProto}";
-var version = "0.0.2";
+var version = "0.0.3";
 var subtitle = "{PROJBRCKT V" + version + " | BracketProto.com }";
-var _events;
 
-function readTextFile(file, callback) {
-  var rawFile = new XMLHttpRequest();
-  rawFile.overrideMimeType("application/json");
-  rawFile.open("GET", file, true);
 
-  rawFile.onreadystatechange = function () {
-    if (rawFile.readyState === 4 && rawFile.status == "200") {
-      callback(rawFile.responseText);
-    }
-  };
 
-  rawFile.send(null);
-} //usage:
-
-readTextFile("./events.json", function (text) {
-  _events = JSON.parse(text);
-
-  if (_events.length == 0) {
-    events = {
-      "events":[
-         {
-            "event":[
-               {
-                  "id": 0,
-                  "name":"EventName",
-                  "description":"Event Description",
-                  "dateinfo":"00/00/00 12:00 AM BST"
-               }
-            ]
-         }
-      ]
-   }
-    console.log(_events);
-  } else {
-    console.log(_events);
-  }
-});
 function update() {
-  i = i + 1;
-  if (i < _events.events[0].event.length) {
-      /*#__PURE__*/
-      React.createElement("h1", null, `name ${_events.event[i].name}`),
-      /*#__PURE__*/
-      React.createElement("h1", null, `events ${_events.event[i].description}`),
-      /*#__PURE__*/
-      React.createElement("h1", null, `dateinfo ${_events.event[i].dateinfo}`);
-  }
-
   value = value + 1;
   var element = /*#__PURE__*/ React.createElement(
     "div",
@@ -125,15 +78,35 @@ function update() {
       "\u2800React Documentation\u2800"
     ),
     /*#__PURE__*/ React.createElement("br", null),
-    /*#__PURE__*/ React.createElement("br", null),
-    /*#__PURE__*/ React.createElement("br", null),
-    /*#__PURE__*/ React.createElement("br", null),
+	/*#__PURE__*/ React.createElement("br", null),
+	/*#__PURE__*/ React.createElement("br", null),
+	/*#__PURE__*/ React.createElement("br", null),
+	/*#__PURE__*/ React.createElement("br", null),
+	/*#__PURE__*/ React.createElement("br", null),
+	/*#__PURE__*/ React.createElement("br", null),
+	/*#__PURE__*/ React.createElement("br", null),
+	/*#__PURE__*/ React.createElement("br", null),
+	/*#__PURE__*/ React.createElement("br", null),
+	/*#__PURE__*/ React.createElement("br", null),
     /*#__PURE__*/ React.createElement(
       "div",
       {
-        class: "events"
+        class: "lore"
       },
-      /*#__PURE__*/ React.createElement("h1", null, "Events")
+      /*#__PURE__*/ React.createElement("h1", null, "Lore (WIP)"),
+      /*#__PURE__*/ React.createElement("p", null, "NAME - Bracket"),
+      /*#__PURE__*/ React.createElement("p", null, "AGE - UNKNOWN"),
+      /*#__PURE__*/ React.createElement("p", null, "GENDER - BIGENDER"),
+      /*#__PURE__*/ React.createElement("p", null, "ROLE - COMBAT"),
+      /*#__PURE__*/ React.createElement("p", null, "TYPE - COMMON PROTOGEN"),
+      /*#__PURE__*/ React.createElement("p", null, "BIRTH - 32XX"),
+      /*#__PURE__*/ React.createElement("br", null),
+      /*#__PURE__*/ React.createElement("p", null, "Bracket is a common type protogen, created in 32XX was used to serve for combat on other planets for the primogenitors. Created in labs, Bracket was one of the first protogens designed to serve for intergalactic combat and was proven to be the first successful prototypes of the common type protogen."),
+      /*#__PURE__*/ React.createElement("br", null),
+      /*#__PURE__*/ React.createElement("p", null, "Abandoned in one of the many wars of the primogenitors, the rare protogens of the Kepler-22 system were able to break free from the primogenitors using arcites."),
+      /*#__PURE__*/ React.createElement("p", null, "The protogens of the Kepler-22 war started a colony on the habitable planet Kepler-22b called KEP-1B in which the protogens were able to gain conscious free will."),
+      /*#__PURE__*/ React.createElement("br", null),
+      /*#__PURE__*/ React.createElement("p", null, "In KEP-1B, Bracket has the role of a programmer to help create spacecrafts and augmentations to other protogens with space exploration of the Kepler-22 system.")
     ),
     /*#__PURE__*/ React.createElement(
       "div",
@@ -148,6 +121,10 @@ function update() {
       /*#__PURE__*/ React.createElement("img", {
         width: "30%",
         src: "./img/ref.png"
+      }),
+	        /*#__PURE__*/ React.createElement("img", {
+        width: "30%",
+        src: "./img/bracket3d.png"
       }),
       /*#__PURE__*/ React.createElement(
         "div",
@@ -170,7 +147,7 @@ function update() {
             "execution-while-out-of-viewport": true,
             "execution-while-not-rendered": true,
             "web-share": true,
-            src: "https://sketchfab.com/models/24995bdd8d7349709e8658e65a56204e/embed?autospin=1&autostart=1&ui_hint=0&ui_theme=dark"
+            src: "https://sketchfab.com/models/24995bdd8d7349709e8658e65a56204e/embed?autospin=1&autostart=0&ui_hint=0&ui_theme=dark"
           },
           " "
         ),
