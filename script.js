@@ -91,26 +91,6 @@ function update() {
     /*#__PURE__*/ React.createElement(
       "div",
       {
-        class: "lore"
-      },
-      /*#__PURE__*/ React.createElement("h1", null, "Lore (WIP)"),
-      /*#__PURE__*/ React.createElement("p", null, "NAME - Bracket"),
-      /*#__PURE__*/ React.createElement("p", null, "AGE - UNKNOWN"),
-      /*#__PURE__*/ React.createElement("p", null, "GENDER - BIGENDER"),
-      /*#__PURE__*/ React.createElement("p", null, "ROLE - COMBAT"),
-      /*#__PURE__*/ React.createElement("p", null, "TYPE - COMMON PROTOGEN"),
-      /*#__PURE__*/ React.createElement("p", null, "BIRTH - 32XX"),
-      /*#__PURE__*/ React.createElement("br", null),
-      /*#__PURE__*/ React.createElement("p", null, "Bracket is a common type protogen, created in 32XX was used to serve for combat on other planets for the primogenitors. Created in labs, Bracket was one of the first protogens designed to serve for intergalactic combat and was proven to be the first successful prototypes of the common type protogen."),
-      /*#__PURE__*/ React.createElement("br", null),
-      /*#__PURE__*/ React.createElement("p", null, "Abandoned in one of the many wars of the primogenitors, the rare protogens of the Kepler-22 system were able to break free from the primogenitors using arcites."),
-      /*#__PURE__*/ React.createElement("p", null, "The protogens of the Kepler-22 war started a colony on the habitable planet Kepler-22b called KEP-1B in which the protogens were able to gain conscious free will."),
-      /*#__PURE__*/ React.createElement("br", null),
-      /*#__PURE__*/ React.createElement("p", null, "In KEP-1B, Bracket has the role of a programmer to help create spacecrafts and augmentations to other protogens with to help with space exploration of the Kepler-22 system.")
-    ),
-    /*#__PURE__*/ React.createElement(
-      "div",
-      {
         class: "section"
       },
       /*#__PURE__*/ React.createElement(
