@@ -99,12 +99,8 @@ function update() {
         "Bracket Proto - References"
       ),
      React.createElement("img", {
-        width: "30%",
+        width: "50%",
         src: "./img/ref.png"
-      }),
-	       React.createElement("img", {
-        width: "30%",
-        src: "./img/bracket3d.png"
       }),
      React.createElement(
         "div",
