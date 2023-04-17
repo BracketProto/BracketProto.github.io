@@ -3,7 +3,7 @@
 var root = ReactDOM.createRoot(document.getElementById("root"));
 var value = 0;
 var title = "{BracketProto}";
-var version = "0.0.3";
+var version = "0.0.4";
 var subtitle = "{PROJBRCKT V" + version + " | BracketProto.com }";
 
 
@@ -31,6 +31,12 @@ function update() {
    React.createElement("br", null),
    React.createElement("iframe", {
       src: "https://lanyard.cnrad.dev/api/530036821707718678",
+      frameBorder: "0",
+      height: "250px",
+      width: "450px"
+    }),
+React.createElement("iframe", {
+      src: "https://itch.io/embed/1668257?linkback=true&amp;dark=tru",
       frameBorder: "0",
       height: "250px",
       width: "450px"
