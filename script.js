@@ -37,7 +37,7 @@ function update() {
     }),
 React.createElement("br", null),
 React.createElement("iframe", {
-src: "https://itch.io/embed/1668257?linkback=true&amp;dark=true",
+src: "https://itch.io/embed/1668257?linkback=true&dark=true",
 frameBorder: "0",
 height: "167",
 width: "552"
@@ -46,6 +46,7 @@ React.createElement("a", {
 href: "https://bracketproto.itch.io/protoshock"
 })
 ),
+React.createElement("br", null),
    React.createElement(
       "div",
       {
