@@ -35,8 +35,9 @@ function update() {
       height: "250px",
       width: "450px"
     }),
+React.createElement("br", null),
 React.createElement("iframe", {
-      src: "https://itch.io/embed/1668257?linkback=true&amp;dark=tru",
+      src: "https://itch.io/embed/1668257?linkback=true&amp;dark=true",
       frameBorder: "0",
       height: "250px",
       width: "450px"
