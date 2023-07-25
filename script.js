@@ -41,7 +41,7 @@ src: "https://store.steampowered.com/widget/2504900/",
 frameBorder: "0",
 height: "646",
 width: "190"
-},
+}),
 React.createElement("br", null),
    React.createElement(
       "div",
