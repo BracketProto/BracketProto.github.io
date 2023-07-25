@@ -39,8 +39,8 @@ React.createElement("br", null),
 React.createElement("iframe", {
 src: "https://store.steampowered.com/widget/2504900/",
 frameBorder: "0",
-height: "646",
-width: "190"
+height: "190",
+width: "646"
 }),
 React.createElement("br", null),
    React.createElement(
