@@ -3,7 +3,7 @@
 var root = ReactDOM.createRoot(document.getElementById("root"));
 var value = 0;
 var title = "{BracketProto}";
-var version = "0.0.4";
+var version = "0.0.5";
 var subtitle = "{PROJBRCKT V" + version + " | BracketProto.com }";
 
 
