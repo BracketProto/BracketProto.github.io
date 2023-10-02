@@ -1,281 +1,387 @@
+<!DOCTYPE html>
+<html>
+
 <head>
   <title>BracketProto</title>
-  <link rel="icon" type="image/png" href="./img/BracketSit.png" sizes="96x96">
-<meta name="title" content="BracketProto">
-<meta name="description" content="A british furry protogen that codes, creates games, and creates content!">
+  <meta content="BracketProto's Bio and links" property="og:description" />
+  <meta content="https://bracketproto.com/" property="og:url" />
+  <meta content="#00FFFF" data-react-helmet="true" name="theme-color" />
+  <link rel="icon" href="Assets/BracketSit.png" type="image/png">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: white;
+      overflow-y: hidden;
+      overflow-x: hidden;
+      background-color: rgb(0, 0, 0);
+    }
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://bracketproto.com/">
-<meta property="og:title" content="BracketProto">
-<meta property="og:description" content="A british furry protogen that codes, creates games, and creates content!">
-<meta property="og:image" content="./Assets/images/backgroundimg.png">
+    .aboutmecontent {
+      position: absolute;
+      background-image: url(./Assets/Background.webp);
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-width: 100%;
+      min-height: 100%;
+    }
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://bracketproto.com/">
-<meta property="twitter:title" content="BracketProto">
-<meta property="twitter:description" content="A british furry protogen that codes, creates games, and creates content!">
-<meta property="twitter:image" content="./Assets/images/backgroundimg.png">
-  <script src=
-  "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-      </script>
-<style>
-  body::-webkit-scrollbar {
-  width: 12px;               /* width of the entire scrollbar */
-}
-body::-webkit-scrollbar-track {
-  background: rgb(0, 0, 0);        /* color of the tracking area */
-}
-body::-webkit-scrollbar-thumb {
-  background-color: rgb(103, 103, 103);    /* color of the scroll thumb */
-  border-radius: 0px;       /* roundness of the scroll thumb */
-  border: 0px solid rgb(255, 255, 255);  /* creates padding around scroll thumb */
-}
-  body{
-    font-family: Arial;
-    background-color: #4158D0;
-	background: linear-gradient(to left, #c33764, #1d2671, #0575e6);
-    color: white;
-    background-size: 200% 200%;
-    animation: gradient 15s ease infinite;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-}
-*{
-    margin:	0;
-    padding: 0;
-    cursor: none;
-}
-.section{
-  width: 100%;
-  height: 120%;
-  background-color: white;
-  color: black;
-  text-align: center;
-}
-.section2{
-  text-align: center;
-  width: 100%;
-  height: 100%;
-  background-color: #36393f;
-  color: white;
-}
-.section3{
-  text-align: center;
-  width: 100%;
-  height: 100%;
-  background-color: #1c1c1c;
-  color: white;
-}
-.section4{
-  text-align: center;
-  width: 100%;
-  height: 25%;
-  background-color: #36393f;
-  color: white;
-}
-.section5{
-  text-align: center;
-  width: 100%;
-  height: 25%;
-  background-color: #000000;
-  color: white;
-}.imgclass {
-height: 50px;
-}
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
-  .headertext{
-    overflow: hidden; 
-    color: #00ffff;
-    font-size: 50px;
-    border-right: 5px solid white;
-    border-image: linear-gradient(transparent 10%, white 10% 90%, transparent 90%) 0 0 0 1 * 3px;
-    white-space: nowrap;
-    letter-spacing: .15em;
-    animation: fx 3.5s forwards;
-}
-.smalltext{
-    overflow: hidden; 
-    color: #00ffff;
-    font-size: 15px;
-    border-right: 5px solid white;
-    border-image: linear-gradient(transparent 10%, white 10% 90%, transparent 90%) 0 0 0 1 * 3px;
-    white-space: nowrap;
-    letter-spacing: .15em;
-    animation: fx 6s forwards;
-}
-.sameline{
-  position:absolute; 
-  top: 175px; 
-  right: 0%;
-  overflow : auto;
-}
-.imgclass2{
-  width: 100px;
-}
-  @keyframes fx {
-  from { width: 0 }
-  to { width: 100%; border: none;}
-}
-  .btn{
-    border: none;
-    background-color: #00AFFF;
-    color: white;
-    font-size: 25px;
-    border-radius: 25px;
-    text-decoration: none;
-}
-@keyframes heartbeat {
-  0% { 
-    transform: translate(-50%, -50%) scale(1); 
-  }
-  50% { 
-    transform: translate(-50%, -50%) scale(1.5); 
-  }
-  100% { 
-    transform: translate(-50%, -50%) scale(1); 
-  }
+    #content1 {
+      position: absolute;
+      background-image: url(./Assets/projectsbackground.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-width: 100%;
+      min-height: 100%;
+      min-width: 100%;
+      min-height: 100%;
+    }
 
-}
+    #content1blur {
+      position: absolute;
+      padding-top: 10%;
+      padding-left: 5%;
+      min-width: 100%;
+      min-height: 100%;
+      min-width: 100%;
+      min-height: 100%;
+      backdrop-filter: blur(10px);
+    }
 
-h1:hover.custommouse{
+    #content2 {
+      position: absolute;
+      position: absolute;
+      background-image: url(./Assets/discordbackground.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-width: 100%;
+      min-height: 100%;
+    }
 
-  animation: heartbeat 2s infinite;  
-}
-.custommouse{
-  background-color: #ffffff;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  -webkit-transform: translate3d(-50%, -50%, 0);
-  z-index: 200;
-   
-  mix-blend-mode:difference;
-}
-.custommouse2{
-  background-color: #ffffff00;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 2px solid white;
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  -webkit-transform: translate3d(-50%, -50%, 0);
-  z-index: 200;
-  
-   
-  mix-blend-mode:difference;
-}
+    #content2blur {
+      position: absolute;
+      padding-top: 10%;
+      padding-left: 5%;
+      min-width: 100%;
+      min-height: 100%;
+      min-width: 100%;
+      min-height: 100%;
+      backdrop-filter: blur(25px);
+      background-color: rgba(0, 0, 0, 0.75);
+    }
 
-	
-</style>
+    #content3 {
+      position: absolute;
+      background: linear-gradient(rgb(0, 0, 0), rgb(21, 21, 21));
+      min-width: 100%;
+      min-height: 100%;
+      padding-top: 15%;
+      padding-left: 1%;
+      text-align: center;
+    }
+
+    .headercontainer {
+      position: absolute;
+      min-width: 100%;
+      z-index: 10;
+      display: inline-block;
+    }
+
+    .header {
+      padding: 5px;
+      background-color: rgba(0, 0, 0, 0.75);
+      text-align: center;
+      display: flex;
+    }
+
+    .headerbuttons {
+      position: fixed;
+      display: flex;
+      right: 10px;
+      top: 40px;
+    }
+
+    .aboutme {
+      position: absolute;
+      top: 15%;
+      right: 75px;
+      background-color: rgba(0, 0, 0, 0.75);
+      width: 350px;
+      height: 500px;
+      line-height: 1.5;
+      padding: 10px;
+      border-radius: 5%;
+    }
+
+    .aboutmeimg {
+      position: absolute;
+      top: 85px;
+      right: 175px;
+      width: 50px;
+    }
+
+    button {
+      background-color: rgba(0, 0, 0, 0);
+      border: none;
+      color: white;
+    }
+
+    iframe {
+      border: none;
+      border-radius: 5px;
+    }
+
+    .discordiframe {
+      position: absolute;
+      left: 0;
+      border: none;
+      width: 100%;
+      height: 100%;
+      scale: 0.95;
+    }
+
+    .discordbutton {
+      border: none;
+      border-radius: 5px;
+      background-color: #5865F2;
+      color: white;
+      padding: 5px;
+      padding-left: 50px;
+      padding-right: 50px;
+      font-size: 25px;
+      text-decoration: none;
+    }
+
+    .discordbutton2 {
+      border: none;
+      border-radius: 5px;
+      background-color: #5865F2;
+      color: white;
+      font-size: 25px;
+      text-decoration: none;
+      padding: 25px;
+    }
+
+    .youtubebutton {
+      border: none;
+      border-radius: 5px;
+      background-color: #ff0000;
+      color: white;
+      font-size: 25px;
+      text-decoration: none;
+      padding: 25px;
+    }
+
+    .Xbutton {
+      border: none;
+      border-radius: 5px;
+      background-color: #000000;
+      color: white;
+      font-size: 25px;
+      text-decoration: none;
+      padding: 25px;
+    }
+
+    .blueskybutton {
+      border: none;
+      border-radius: 5px;
+      background-color: #000000;
+      color: white;
+      font-size: 25px;
+      text-decoration: none;
+      padding: 25px;
+    }
+
+    .vrchatbutton {
+      border: none;
+      border-radius: 5px;
+      background-color: #001f20;
+      color: white;
+      font-size: 25px;
+      text-decoration: none;
+      padding: 25px;
+    }
+  </style>
 </head>
+
 <body>
-</body>
-<div id="root">
-  <div>
-    <p>
-      Welcome to wait for page to load.
-    </p>
+  <div class="headercontainer">
+    <div class="header">
+      <h1>{BracketProto}</h1>
+      <div class="headerbuttons">
+        <button onclick="window.location='#home'" id="homebutton">Home</button><br />
+        <button  onclick="window.location='#projects'" id="contentButton1">Projects</button><br />
+        <button onclick="window.location='#discord'" id="contentButton2">Discord Community</button><br />
+        <button onclick="window.location='#socials'" id="contentButton3">Socials</button><br />
+      </div>
+    </div>
   </div>
-</div>
-<script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
-<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> 
 
-<script type='text/javascript' src="script.js"></script>
-<script>
-if(! /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-  kofiwidget2.init('Support Me on Ko-fi', '#29abe0', 'F2F580IVD');
-  kofiwidget2.draw();
-  document.addEventListener("DOMContentLoaded", function(event) { 
-  setTimeout( () =>{
-  var elements = document.getElementsByClassName('kofi-button'); var requiredElement = elements[0];
-  document.getElementById("4").appendChild(requiredElement);
-  }, 2000);
-  });
-  }
+  <div id="aboutmecontent" class="aboutmecontent">
+
+    <div class="aboutme">
+      <h1>About me</h1>
+      <p>Hi, I'm Bracket!</p>
+      <p>I'm a non-binary furry from the UK; <small>(He/She/They)</small></p>
+      <p>I am also a hobbyist programmer that
+        makes games and websites using
+        tools such as Unity and Node JS.</p>
+      <img class="aboutmeimg" src="Assets/BracketSit.png"></img>
+      <iframe class="discordiframe" src="https://lanyard.cnrad.dev/api/530036821707718678"></iframe>
+    </div>
+  </div>
+
+
+  <div id="content1" style="display: none;">
+    <div id="content1blur">
+      <h1>Projects</h1>
+      <br />
+      <h1>PROTOSHOCK</h1>
+      <iframe src="https://store.steampowered.com/widget/2504900/" frameborder="0" width="646" height="190"></iframe>
+      <p>Protoshock is a multiplayer first person shooter including creatures known as protogens.</p>
+      <p>It is created by me using Unity and Node JS and networking using Socket.IO.</p>
+      <p>You can go to the Steam store to access the playtest version now!</p>
+    </div>
+  </div>
+
+  <!-- Content 2 -->
+  <div id="content2" style="display: none;">
+    <div id="content2blur">
+      <h1>Discord Community <img src="Assets/Logos/icon_clyde_white_RGB.png" width="50px"
+          style="vertical-align: middle;"></img></h1>
+      <p>If you want to join the community of BracketProto or Protoshock consider joining the discord server below:</p>
+      <a href="https://discord.gg/9EWz4tekRR" class="discordbutton">Click here to join</a>
+      <br /> <br /> <br />
+      <h1>Rules:</h1>
+      <br />
+      <p><img src="Assets/Emojis/Barrier.png" width="35px" style="vertical-align: middle;"></img> &nbsp; No NSFW content
+        in any channels</p>
+      <br />
+      <p><img src="Assets/Emojis/Checkmark.png" width="35px" style="vertical-align: middle;"></img> &nbsp;Use common
+        sense</p>
+      <br />
+      <p><img src="Assets/Emojis/Barrier.png" width="35px" style="vertical-align: middle;"></img> &nbsp; Dont be rude or
+        inappropriate to other members</p>
+    </div>
+  </div>
+
+  <!-- Content 3 -->
+  <div id="content3" style="display: none;">
+    <h1>Socials</h1>
+    <p>Here you can find my social media pages and links</p>
+    <br /><br />
+    <a href="https://discord.gg/9EWz4tekRR" class="discordbutton2"><img src="Assets/Logos/icon_clyde_white_RGB.png"
+        width="50px" style="vertical-align: middle;"></a> &nbsp; &nbsp;
+    <a href="https://www.youtube.com/c/BracketProto" class="youtubebutton"><img src="Assets/Logos/youtube.png"
+        width="50px" style="vertical-align: middle;"></a> &nbsp; &nbsp;
+    <a href="https://twitter.com/BracketProto" class="Xbutton"><img src="Assets/Logos/X.png" width="50px"
+        style="vertical-align: middle;"></a> &nbsp; &nbsp;
+    <a href="https://bsky.app/profile/bracketproto.com" class="blueskybutton"><img src="Assets/Logos/bluesky.png"
+        width="50px" style="vertical-align: top;"></a> &nbsp; &nbsp;
+    <a href="https://vrchat.com/home/user/usr_2607cdf3-ee12-4d51-b8d3-6b0bcdc96cf6" class="vrchatbutton"><img
+        src="Assets/Logos/vrc.png" width="50px" style="vertical-align: middle;"></a>
+  </div>
+
+
+  <script>
+    const homebutton = document.getElementById('homebutton');
+    const contentButton1 = document.getElementById('contentButton1');
+    const contentButton2 = document.getElementById('contentButton2');
+    const contentButton3 = document.getElementById('contentButton3');
+    const homecontent = document.getElementById('aboutmecontent');
+    const content1 = document.getElementById('content1');
+    const content2 = document.getElementById('content2');
+    const content3 = document.getElementById('content3');
+    var homeopacity = 1.0;
+    var opacity1 = 0.0;
+    var opacity2 = 0.0;
+    var opacity3 = 0.0;
+
+    //home
+    homebutton.addEventListener('click', function () {
+      homeopacity = 1;
+      opacity1 = 0;
+      opacity2 = 0;
+      opacity3 = 0;
+    });
+
+    //projects
+    contentButton1.addEventListener('click', function () {
+      homeopacity = 0;
+      opacity1 = 1;
+      opacity2 = 0;
+      opacity3 = 0;
+    });
+    //discord
+    contentButton2.addEventListener('click', function () {
+      homeopacity = 0;
+      opacity1 = 0;
+      opacity2 = 1;
+      opacity3 = 0;
+    });
+    //socials
+    contentButton3.addEventListener('click', function () {
+      homeopacity = 0;
+      opacity1 = 0;
+      opacity2 = 0;
+      opacity3 = 1;
+    });
+
+    homecontent.style.display = 'block';
+    content1.style.display = 'block';
+    content2.style.display = 'block';
+    content3.style.display = 'block';
+
+    homecontent.style.opacity = 1;
+    content1.style.opacity = 0;
+    content2.style.opacity = 0;
+    content3.style.opacity = 0;
+
+    function lerp(a, b, t) {
+      return (1 - t) * a + t * b;
+    }
+    var speed = 50;
+    setInterval(function () {
+      homecontent.style.opacity = lerp(homecontent.style.opacity, homeopacity, .5);
+      content1.style.opacity = lerp(content1.style.opacity, opacity1, .5);
+      content2.style.opacity = lerp(content2.style.opacity, opacity2, .5);
+      content3.style.opacity = lerp(content3.style.opacity, opacity3, .5);
+
+      homecontent.style.zIndex = homeopacity;
+      content1.style.zIndex = opacity1 - 1;
+      content2.style.zIndex = opacity2 - 1;
+      content3.style.zIndex = opacity3 - 1;
+    }, speed);
+
+    const currentUrl = window.location.href;
+    if (currentUrl.includes("#home")) {
+          homeopacity = 1;
+          opacity1 = 0;
+          opacity2 = 0;
+          opacity3 = 0;
+        }
+        if (currentUrl.includes("#projects")) {
+          homeopacity = 0;
+          opacity1 = 1;
+          opacity2 = 0;
+          opacity3 = 0;
+        }
+        if(currentUrl.includes("#discord")){
+            homeopacity = 0;
+            opacity1 = 0;
+            opacity2 = 1;
+            opacity3 = 0;
+          }
+          if(currentUrl.includes("#socials")){
+            homeopacity = 0;
+            opacity1 = 0;
+            opacity2 = 0;
+            opacity3 = 1;
+          }
+
   </script>
-  
-<div class="custommouse"></div>
-<div class="custommouse2"></div>
 
-<script>
-const custommouse = document.querySelector("div.custommouse");
-const custommouse2 = document.querySelector("div.custommouse2");
-let speed = 1;
-let speed2 = 0.5;
-
-let mouseX = window.innerWidth / 2;
-let mouseY = window.innerHeight / 2;
-
-let mouseX2 = window.innerWidth / 2;
-let mouseY2 = window.innerHeight / 2;
-
-let cmX = 0;
-let cmY = 0;
-
-let cmX2 = 0;
-let cmY2 = 0;
-
-function animate(){
-  
-  let distX = mouseX - cmX;
-  let distY = mouseY - cmY;
-  let distX2 = mouseX2 - cmX2;
-  let distY2 = mouseY2 - cmY2;
-  
-  
-  cmX = cmX + (distX * speed);
-  cmY = cmY + (distY * speed);
-  cmX2 = cmX2 + (distX2 * speed2);
-  cmY2 = cmY2 + (distY2 * speed2);
-  
-  custommouse.style.left = cmX + "px";
-  custommouse.style.top = cmY + "px";
-  custommouse2.style.left = cmX2 + "px";
-  custommouse2.style.top = cmY2 + "px";
-  
-  requestAnimationFrame(animate);
-}
-animate();
-
-document.addEventListener('mousemove', event => {
-  mouseX = event.pageX;
-  mouseY = event.pageY;
-  mouseX2 = event.pageX;
-  mouseY2 = event.pageY;
-})
-</script>
-<script>
-if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-    document.getElementById('root').style.display = 'none';
-    let myElm = document.createElement("h1");
-	myElm.innerText = 'Please load the site on desktop.';
-	myElm.style.textAlign = "center";
-	myElm.style.fontSize = "500%";
-    document.body.appendChild(myElm);	
-}
-</script>
 </body>
+
+</html>
