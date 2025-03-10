@@ -1,43 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/three@0.136.0/build/three.min.js"></script>
+  <script defer src="./assets/main.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <title>BracketProto</title>
+  <style>
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+  </style>
 </head>
-<body class="bg-white font-sans text-gray-800 overflow-hidden">
-  <div class="min-h-screen flex flex-col items-center justify-center space-y-8 sm:space-x-8 sm:flex-row">
-    <img src="./assets/image.png" alt="Vrchat Image" class="rounded-lg shadow-xl w-[35%] sm:w-[25%] h-auto object-cover">
-    <div class="flex flex-col items-center sm:items-start">
-      <h1 class="text-3xl sm:text-4xl font-semibold">Hello there!</h1>
-      <p class="text-base sm:text-lg max-w-md mt-2">
-        I'm Bracket (or BracketProto), a Software Developer from the UK with a focus on Web Development, Game Development, and Graphics Programming.
+
+<body class="bg-black text-white font-sans overflow-hidden">
+  <canvas id="background"></canvas>
+
+  <div
+    class="min-h-screen flex flex-col items-center justify-center px-4 sm:px-8 md:px-16 py-8 sm:py-16 space-y-8 sm:space-x-8 sm:flex-row">
+    <img src="./assets/image.png" alt="Vrchat Image"
+      class="relative rounded-lg shadow-xl w-[35%] sm:w-[25%] h-auto object-cover">
+
+    <!-- Introduction -->
+    <div class="flex flex-col items-center sm:items-start max-w-xl text-center sm:text-left">
+      <h1 class="text-3xl sm:text-4xl font-semibold leading-tight">Hello there!</h1>
+      <p class="text-base sm:text-lg mt-4">
+        I'm Bracket (or BracketProto), a Software Developer from the UK with a focus on Web Development, Game
+        Development, and Graphics Programming.
       </p>
-      <p class="mt-6 sm:mt-10">Also heavily addicted to Rain World and VRChat.</p>
-      <small>Yes, this site was made in 5 minutes.</small>
-      <div class="flex flex-wrap justify-center sm:justify-start space-x-4 mt-4">
-        <a href="https://www.youtube.com/bracketproto" target="_blank" class="bg-red-600 text-white w-12 h-12 flex items-center justify-center rounded-full border-2 border-black shadow-lg hover:bg-red-700 transition">
+      <div class="inline">
+      <img src="./assets/Slugwalk.gif" class="w-10 relative bottom-5 inline m-5"><p class="mt-6 sm:mt-8 inline">Also heavily addicted to Rain World and VRChat.</p>
+      </div>
+      <small class="block mt-4">Yes, this site was made in 5 minutes.</small>
+
+      <!-- Social Media Links -->
+      <div class="flex flex-wrap justify-center sm:justify-start mt-6">
+        <a href="https://www.youtube.com/bracketproto" target="_blank"
+          class="m-1 bg-red-600 text-white w-12 h-12 flex items-center justify-center rounded-full border-2 border-white shadow-lg hover:bg-red-700 transition">
           <i class="fab fa-youtube text-xl"></i>
         </a>
-        <a href="https://x.com/BracketProto" target="_blank" class="bg-white text-black w-12 h-12 flex items-center justify-center rounded-full border-2 border-black shadow-lg hover:bg-gray-200 transition">
+        <a href="https://x.com/BracketProto" target="_blank"
+          class="m-1 bg-white text-black w-12 h-12 flex items-center justify-center rounded-full border-2 border-white shadow-lg hover:bg-gray-200 transition">
           <i class="fab fa-x text-xl"></i>
         </a>
-        <a href="https://vrchat.com/home/user/usr_2607cdf3-ee12-4d51-b8d3-6b0bcdc96cf6" target="_blank" class="bg-cyan-500 text-white w-12 h-12 flex items-center justify-center rounded-full border-2 border-black shadow-lg hover:bg-cyan-600 transition">
+        <a href="https://vrchat.com/home/user/usr_2607cdf3-ee12-4d51-b8d3-6b0bcdc96cf6" target="_blank"
+          class="m-1 bg-cyan-500 text-white w-12 h-12 flex items-center justify-center rounded-full border-2 border-white shadow-lg hover:bg-cyan-600 transition">
           <img src="./assets/Vrchat.png" alt="VRChat" class="w-7 h-7 object-contain">
         </a>
-        <a href="https://discordapp.com/users/530036821707718678" target="_blank" class="bg-indigo-600 text-white w-12 h-12 flex items-center justify-center rounded-full border-2 border-black shadow-lg hover:bg-indigo-700 transition">
+        <a href="https://discordapp.com/users/530036821707718678" target="_blank"
+          class="m-1 bg-indigo-600 text-white w-12 h-12 flex items-center justify-center rounded-full border-2 border-white shadow-lg hover:bg-indigo-700 transition">
           <i class="fab fa-discord text-xl"></i>
         </a>
-        <a href="https://github.com/OCSYT" target="_blank" class="bg-gray-800 text-white w-12 h-12 flex items-center justify-center rounded-full border-2 border-black shadow-lg hover:bg-gray-900 transition">
+        <a href="https://github.com/OCSYT" target="_blank"
+          class="m-1 bg-gray-800 text-white w-12 h-12 flex items-center justify-center rounded-full border-2 border-white shadow-lg hover:bg-gray-900 transition">
           <i class="fab fa-github text-xl"></i>
         </a>
-        <a href="https://steamcommunity.com/id/BracketProto" target="_blank" class="bg-gray-600 text-white w-12 h-12 flex items-center justify-center rounded-full border-2 border-black shadow-lg hover:bg-gray-700 transition">
+        <a href="https://steamcommunity.com/id/BracketProto" target="_blank"
+          class="m-1 bg-gray-600 text-white w-12 h-12 flex items-center justify-center rounded-full border-2 border-white shadow-lg hover:bg-gray-700 transition">
           <i class="fab fa-steam text-xl"></i>
         </a>
       </div>
     </div>
   </div>
 </body>
+
 </html>
