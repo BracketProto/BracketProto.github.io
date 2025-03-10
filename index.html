@@ -1,387 +1,43 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>BracketProto</title>
-  <meta content="BracketProto's Bio and links" property="og:description" />
-  <meta content="https://bracketproto.com/" property="og:url" />
-  <meta content="#00FFFF" data-react-helmet="true" name="theme-color" />
-  <link rel="icon" href="Assets/BracketSit.png" type="image/png">
-  <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      margin: 0;
-      padding: 0;
-      color: white;
-      overflow-y: hidden;
-      overflow-x: hidden;
-      background-color: rgb(0, 0, 0);
-    }
-
-    .aboutmecontent {
-      position: absolute;
-      background-image: url(./Assets/Background.webp);
-      background-repeat: no-repeat;
-      background-size: cover;
-      min-width: 100%;
-      min-height: 100%;
-    }
-
-    #content1 {
-      position: absolute;
-      background-image: url(./Assets/projectsbackground.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-      min-width: 100%;
-      min-height: 100%;
-      min-width: 100%;
-      min-height: 100%;
-    }
-
-    #content1blur {
-      position: absolute;
-      padding-top: 10%;
-      padding-left: 5%;
-      min-width: 100%;
-      min-height: 100%;
-      min-width: 100%;
-      min-height: 100%;
-      backdrop-filter: blur(10px);
-    }
-
-    #content2 {
-      position: absolute;
-      position: absolute;
-      background-image: url(./Assets/discordbackground.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-      min-width: 100%;
-      min-height: 100%;
-    }
-
-    #content2blur {
-      position: absolute;
-      padding-top: 10%;
-      padding-left: 5%;
-      min-width: 100%;
-      min-height: 100%;
-      min-width: 100%;
-      min-height: 100%;
-      backdrop-filter: blur(25px);
-      background-color: rgba(0, 0, 0, 0.75);
-    }
-
-    #content3 {
-      position: absolute;
-      background: linear-gradient(rgb(0, 0, 0), rgb(21, 21, 21));
-      min-width: 100%;
-      min-height: 100%;
-      padding-top: 15%;
-      padding-left: 1%;
-      text-align: center;
-    }
-
-    .headercontainer {
-      position: absolute;
-      min-width: 100%;
-      z-index: 10;
-      display: inline-block;
-    }
-
-    .header {
-      padding: 5px;
-      background-color: rgba(0, 0, 0, 0.75);
-      text-align: center;
-      display: flex;
-    }
-
-    .headerbuttons {
-      position: fixed;
-      display: flex;
-      right: 10px;
-      top: 40px;
-    }
-
-    .aboutme {
-      position: absolute;
-      top: 15%;
-      right: 75px;
-      background-color: rgba(0, 0, 0, 0.75);
-      width: 350px;
-      height: 500px;
-      line-height: 1.5;
-      padding: 10px;
-      border-radius: 5%;
-    }
-
-    .aboutmeimg {
-      position: absolute;
-      top: 85px;
-      right: 175px;
-      width: 50px;
-    }
-
-    button {
-      background-color: rgba(0, 0, 0, 0);
-      border: none;
-      color: white;
-    }
-
-    iframe {
-      border: none;
-      border-radius: 5px;
-    }
-
-    .discordiframe {
-      position: absolute;
-      left: 0;
-      border: none;
-      width: 100%;
-      height: 100%;
-      scale: 0.95;
-    }
-
-    .discordbutton {
-      border: none;
-      border-radius: 5px;
-      background-color: #5865F2;
-      color: white;
-      padding: 5px;
-      padding-left: 50px;
-      padding-right: 50px;
-      font-size: 25px;
-      text-decoration: none;
-    }
-
-    .discordbutton2 {
-      border: none;
-      border-radius: 5px;
-      background-color: #5865F2;
-      color: white;
-      font-size: 25px;
-      text-decoration: none;
-      padding: 25px;
-    }
-
-    .youtubebutton {
-      border: none;
-      border-radius: 5px;
-      background-color: #ff0000;
-      color: white;
-      font-size: 25px;
-      text-decoration: none;
-      padding: 25px;
-    }
-
-    .Xbutton {
-      border: none;
-      border-radius: 5px;
-      background-color: #000000;
-      color: white;
-      font-size: 25px;
-      text-decoration: none;
-      padding: 25px;
-    }
-
-    .blueskybutton {
-      border: none;
-      border-radius: 5px;
-      background-color: #000000;
-      color: white;
-      font-size: 25px;
-      text-decoration: none;
-      padding: 25px;
-    }
-
-    .vrchatbutton {
-      border: none;
-      border-radius: 5px;
-      background-color: #001f20;
-      color: white;
-      font-size: 25px;
-      text-decoration: none;
-      padding: 25px;
-    }
-  </style>
 </head>
-
-<body>
-  <div class="headercontainer">
-    <div class="header">
-      <h1>{BracketProto}</h1>
-      <div class="headerbuttons">
-        <button onclick="window.location='#home'" id="homebutton">Home</button><br />
-        <button  onclick="window.location='#projects'" id="contentButton1">Projects</button><br />
-        <button onclick="window.location='#discord'" id="contentButton2">Discord Community</button><br />
-        <button onclick="window.location='#socials'" id="contentButton3">Socials</button><br />
+<body class="bg-white font-sans text-gray-800 overflow-hidden">
+  <div class="min-h-screen flex flex-col items-center justify-center space-y-8 sm:space-x-8 sm:flex-row">
+    <img src="./assets/image.png" alt="Vrchat Image" class="rounded-lg shadow-xl w-[50%] sm:w-[30%] h-auto object-cover">
+    <div class="flex flex-col items-center sm:items-start">
+      <h1 class="text-3xl sm:text-4xl font-semibold">Hello there!</h1>
+      <p class="text-base sm:text-lg max-w-md mt-2">
+        I'm Bracket (or BracketProto), a Software Developer from the UK with a focus on Web Development, Game Development, and Graphics Programming.
+      </p>
+      <p class="mt-6 sm:mt-10">Also heavily addicted to Rain World and VRChat.</p>
+      <small>Yes, this site was made in 5 minutes.</small>
+      <div class="flex flex-wrap justify-center sm:justify-start space-x-4 mt-4">
+        <a href="https://www.youtube.com/bracketproto" target="_blank" class="bg-red-600 text-white w-12 h-12 flex items-center justify-center rounded-full border-2 border-black shadow-lg hover:bg-red-700 transition">
+          <i class="fab fa-youtube text-xl"></i>
+        </a>
+        <a href="https://x.com/BracketProto" target="_blank" class="bg-white text-black w-12 h-12 flex items-center justify-center rounded-full border-2 border-black shadow-lg hover:bg-gray-200 transition">
+          <i class="fab fa-x text-xl"></i>
+        </a>
+        <a href="https://vrchat.com/home/user/usr_2607cdf3-ee12-4d51-b8d3-6b0bcdc96cf6" target="_blank" class="bg-cyan-500 text-white w-12 h-12 flex items-center justify-center rounded-full border-2 border-black shadow-lg hover:bg-cyan-600 transition">
+          <img src="./assets/Vrchat.png" alt="VRChat" class="w-7 h-7 object-contain">
+        </a>
+        <a href="https://discordapp.com/users/530036821707718678" target="_blank" class="bg-indigo-600 text-white w-12 h-12 flex items-center justify-center rounded-full border-2 border-black shadow-lg hover:bg-indigo-700 transition">
+          <i class="fab fa-discord text-xl"></i>
+        </a>
+        <a href="https://github.com/OCSYT" target="_blank" class="bg-gray-800 text-white w-12 h-12 flex items-center justify-center rounded-full border-2 border-black shadow-lg hover:bg-gray-900 transition">
+          <i class="fab fa-github text-xl"></i>
+        </a>
+        <a href="https://steamcommunity.com/id/BracketProto" target="_blank" class="bg-gray-600 text-white w-12 h-12 flex items-center justify-center rounded-full border-2 border-black shadow-lg hover:bg-gray-700 transition">
+          <i class="fab fa-steam text-xl"></i>
+        </a>
       </div>
     </div>
   </div>
-
-  <div id="aboutmecontent" class="aboutmecontent">
-
-    <div class="aboutme">
-      <h1>About me</h1>
-      <p>Hi, I'm Bracket!</p>
-      <p>I'm a non-binary furry from the UK; <small>(He/She/They)</small></p>
-      <p>I am also a hobbyist programmer that
-        makes games and websites using
-        tools such as Unity and Node JS.</p>
-      <img class="aboutmeimg" src="Assets/BracketSit.png"></img>
-      <iframe class="discordiframe" src="https://lanyard.cnrad.dev/api/530036821707718678"></iframe>
-    </div>
-  </div>
-
-
-  <div id="content1" style="display: none;">
-    <div id="content1blur">
-      <h1>Projects</h1>
-      <br />
-      <h1>PROTOSHOCK</h1>
-      <iframe src="https://store.steampowered.com/widget/2504900/" frameborder="0" width="646" height="190"></iframe>
-      <p>Protoshock is a multiplayer first person shooter including creatures known as protogens.</p>
-      <p>It is created by me using Unity and Node JS and networking using Socket.IO.</p>
-      <p>You can go to the Steam store to access the playtest version now!</p>
-    </div>
-  </div>
-
-  <!-- Content 2 -->
-  <div id="content2" style="display: none;">
-    <div id="content2blur">
-      <h1>Discord Community <img src="Assets/Logos/icon_clyde_white_RGB.png" width="50px"
-          style="vertical-align: middle;"></img></h1>
-      <p>If you want to join the community of BracketProto or Protoshock consider joining the discord server below:</p>
-      <a href="https://discord.gg/9EWz4tekRR" class="discordbutton">Click here to join</a>
-      <br /> <br /> <br />
-      <h1>Rules:</h1>
-      <br />
-      <p><img src="Assets/Emojis/Barrier.png" width="35px" style="vertical-align: middle;"></img> &nbsp; No NSFW content
-        in any channels</p>
-      <br />
-      <p><img src="Assets/Emojis/Checkmark.png" width="35px" style="vertical-align: middle;"></img> &nbsp;Use common
-        sense</p>
-      <br />
-      <p><img src="Assets/Emojis/Barrier.png" width="35px" style="vertical-align: middle;"></img> &nbsp; Dont be rude or
-        inappropriate to other members</p>
-    </div>
-  </div>
-
-  <!-- Content 3 -->
-  <div id="content3" style="display: none;">
-    <h1>Socials</h1>
-    <p>Here you can find my social media pages and links</p>
-    <br /><br />
-    <a href="https://discord.gg/9EWz4tekRR" class="discordbutton2"><img src="Assets/Logos/icon_clyde_white_RGB.png"
-        width="50px" style="vertical-align: middle;"></a> &nbsp; &nbsp;
-    <a href="https://www.youtube.com/c/BracketProto" class="youtubebutton"><img src="Assets/Logos/youtube.png"
-        width="50px" style="vertical-align: middle;"></a> &nbsp; &nbsp;
-    <a href="https://twitter.com/BracketProto" class="Xbutton"><img src="Assets/Logos/X.png" width="50px"
-        style="vertical-align: middle;"></a> &nbsp; &nbsp;
-    <a href="https://bsky.app/profile/bracketproto.com" class="blueskybutton"><img src="Assets/Logos/bluesky.png"
-        width="50px" style="vertical-align: top;"></a> &nbsp; &nbsp;
-    <a href="https://vrchat.com/home/user/usr_2607cdf3-ee12-4d51-b8d3-6b0bcdc96cf6" class="vrchatbutton"><img
-        src="Assets/Logos/vrc.png" width="50px" style="vertical-align: middle;"></a>
-  </div>
-
-
-  <script>
-    const homebutton = document.getElementById('homebutton');
-    const contentButton1 = document.getElementById('contentButton1');
-    const contentButton2 = document.getElementById('contentButton2');
-    const contentButton3 = document.getElementById('contentButton3');
-    const homecontent = document.getElementById('aboutmecontent');
-    const content1 = document.getElementById('content1');
-    const content2 = document.getElementById('content2');
-    const content3 = document.getElementById('content3');
-    var homeopacity = 1.0;
-    var opacity1 = 0.0;
-    var opacity2 = 0.0;
-    var opacity3 = 0.0;
-
-    //home
-    homebutton.addEventListener('click', function () {
-      homeopacity = 1;
-      opacity1 = 0;
-      opacity2 = 0;
-      opacity3 = 0;
-    });
-
-    //projects
-    contentButton1.addEventListener('click', function () {
-      homeopacity = 0;
-      opacity1 = 1;
-      opacity2 = 0;
-      opacity3 = 0;
-    });
-    //discord
-    contentButton2.addEventListener('click', function () {
-      homeopacity = 0;
-      opacity1 = 0;
-      opacity2 = 1;
-      opacity3 = 0;
-    });
-    //socials
-    contentButton3.addEventListener('click', function () {
-      homeopacity = 0;
-      opacity1 = 0;
-      opacity2 = 0;
-      opacity3 = 1;
-    });
-
-    homecontent.style.display = 'block';
-    content1.style.display = 'block';
-    content2.style.display = 'block';
-    content3.style.display = 'block';
-
-    homecontent.style.opacity = 1;
-    content1.style.opacity = 0;
-    content2.style.opacity = 0;
-    content3.style.opacity = 0;
-
-    function lerp(a, b, t) {
-      return (1 - t) * a + t * b;
-    }
-    var speed = 50;
-    setInterval(function () {
-      homecontent.style.opacity = lerp(homecontent.style.opacity, homeopacity, .5);
-      content1.style.opacity = lerp(content1.style.opacity, opacity1, .5);
-      content2.style.opacity = lerp(content2.style.opacity, opacity2, .5);
-      content3.style.opacity = lerp(content3.style.opacity, opacity3, .5);
-
-      homecontent.style.zIndex = homeopacity;
-      content1.style.zIndex = opacity1 - 1;
-      content2.style.zIndex = opacity2 - 1;
-      content3.style.zIndex = opacity3 - 1;
-    }, speed);
-
-    const currentUrl = window.location.href;
-    if (currentUrl.includes("#home")) {
-          homeopacity = 1;
-          opacity1 = 0;
-          opacity2 = 0;
-          opacity3 = 0;
-        }
-        if (currentUrl.includes("#projects")) {
-          homeopacity = 0;
-          opacity1 = 1;
-          opacity2 = 0;
-          opacity3 = 0;
-        }
-        if(currentUrl.includes("#discord")){
-            homeopacity = 0;
-            opacity1 = 0;
-            opacity2 = 1;
-            opacity3 = 0;
-          }
-          if(currentUrl.includes("#socials")){
-            homeopacity = 0;
-            opacity1 = 0;
-            opacity2 = 0;
-            opacity3 = 1;
-          }
-
-  </script>
-
 </body>
-
 </html>
