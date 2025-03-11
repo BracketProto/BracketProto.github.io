@@ -37,12 +37,35 @@ function GenerateGrid() {
     }
 }
 
+let Mouse = new THREE.Vector2();
+let MouseWorld = new THREE.Vector3();
 
-let MouseX = 0, MouseY = 0;
 window.addEventListener('mousemove', (Event) => {
-    MouseX = (Event.clientX / window.innerWidth) * 2 - 1;
-    MouseY = -(Event.clientY / window.innerHeight) * 2 + 1;
+    Mouse.x = (Event.clientX / window.innerWidth) * 2 - 1;
+    Mouse.y = -((Event.clientY / window.innerHeight) * 2 - 1);
 });
+
+function UpdateDots() {
+    // Create a ray from the camera through the mouse position
+    const Raycaster = new THREE.Raycaster();
+    const MouseVector = new THREE.Vector2(Mouse.x, Mouse.y);
+    Raycaster.setFromCamera(MouseVector, Camera);
+
+    // Find intersection with the z=0 plane
+    const PlaneZ = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0); // Plane at z = 0
+    const MouseWorld = new THREE.Vector3();
+    Raycaster.ray.intersectPlane(PlaneZ, MouseWorld); // Get intersection point
+
+    // Scale dots based on distance from the mouse pointer
+    Dots.forEach(Dot => {
+        const Distance = Dot.position.distanceTo(MouseWorld);
+
+        // Apply non-linear scaling for a smooth effect
+        const ScaleFactor = THREE.MathUtils.clamp(2 / (Distance + 1), .1, 5); 
+
+        Dot.scale.set(1/ScaleFactor/3, 1/ScaleFactor/3, 0.1);
+    });
+}
 
 
 window.addEventListener('resize', () => {
@@ -51,16 +74,6 @@ window.addEventListener('resize', () => {
     Camera.updateProjectionMatrix();
     GenerateGrid();
 });
-
-function UpdateDots() {
-    Dots.forEach(Dot => {
-        const Dist = Math.sqrt(
-            Math.pow(Dot.position.x - MouseX * 10, 2) +
-            Math.pow(Dot.position.y - MouseY * 10, 2)
-        );
-        Dot.scale.set(1 + Dist * 0.15, 1 + Dist * 0.15, 1);
-    });
-}
 
 function Animate() {
     requestAnimationFrame(Animate);
