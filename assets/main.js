@@ -4,6 +4,9 @@ window.addEventListener('mousemove', (Event) => {
     Mouse.y = -((Event.clientY / window.innerHeight) * 2 - 1);
 });
 const RainWorld = document.getElementsByClassName("rainworld")[0];
+RainWorld.style.left = -25 + "vw";
+RainWorld.style.top = -25 + "vh";
+
 
 //THREEJS
 
