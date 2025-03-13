@@ -1,3 +1,12 @@
+let Mouse = new THREE.Vector2();
+window.addEventListener('mousemove', (Event) => {
+    Mouse.x = (Event.clientX / window.innerWidth) * 2 - 1;
+    Mouse.y = -((Event.clientY / window.innerHeight) * 2 - 1);
+});
+const RainWorld = document.getElementsByClassName("rainworld")[0];
+
+//THREEJS
+
 const Scene = new THREE.Scene();
 Scene.background = new THREE.Color(0x0b0c14);
 
@@ -11,7 +20,8 @@ document.body.appendChild(Renderer.domElement);
 // Dot Parameters
 const DotRadius = 0.05;
 const DotDistance = 1.5;
-const DotMaterial = new THREE.MeshBasicMaterial({ color: 0x1b1c29 });
+const Opacity = 0.25;
+const DotMaterial = new THREE.MeshBasicMaterial({ color: new THREE.Color().setRGB(1 * Opacity, 1 * Opacity, 1 * Opacity) });
 
 const Geometry = new THREE.SphereGeometry(DotRadius, 16, 16);
 const Dots = new Set();
@@ -37,13 +47,7 @@ function GenerateGrid() {
     }
 }
 
-let Mouse = new THREE.Vector2();
 let MouseWorld = new THREE.Vector3();
-
-window.addEventListener('mousemove', (Event) => {
-    Mouse.x = (Event.clientX / window.innerWidth) * 2 - 1;
-    Mouse.y = -((Event.clientY / window.innerHeight) * 2 - 1);
-});
 
 function UpdateDots() {
     // Create a ray from the camera through the mouse position
@@ -75,10 +79,33 @@ window.addEventListener('resize', () => {
     GenerateGrid();
 });
 
+const lerp = (x, y, a) => x * (1 - a) + y * a;
+
+let LastTime = performance.now();
+
 function Animate() {
+    let DeltaTime = (performance.now() - LastTime) / 1000;
+    LastTime = performance.now();
     requestAnimationFrame(Animate);
+    if(window.innerWidth == 0 || window.innerHeight == 0){
+        return; 
+    }
     UpdateDots();
     Renderer.render(Scene, Camera);
+    const CurrentLeft = Number(RainWorld.style.left.toString().replace("vw", ""));
+    const CurrentTop = Number(RainWorld.style.top.toString().replace("vh", ""));
+    const ImageLeft = THREE.MathUtils.clamp(
+        lerp(CurrentLeft, ((-Mouse.x - (1 / window.innerWidth) / 2) - 1) * 25, 2.5 * DeltaTime),
+        -50,
+        0
+    );
+    const ImageTop = THREE.MathUtils.clamp(
+        lerp(CurrentTop, ((Mouse.y - (1 / window.innerHeight) / 2) - 1) * 25, 2.5 * DeltaTime),
+        -50,
+        0
+    );
+    RainWorld.style.left = ImageLeft.toString() + "vw";
+    RainWorld.style.top = ImageTop.toString() + "vh";
 }
 
 GenerateGrid();

@@ -36,12 +36,25 @@
       position: fixed;
       top: 0;
       left: 0;
+      z-index: -2;
+    }
+    .rainworld{
+      background: url(./assets/rainworld.png);
+      background-size:cover;
+      background-repeat: no-repeat;
+      background-position: center;
       z-index: -1;
+      position: fixed;
+      height: 150vh;
+      width: 150vw;
+      opacity: .5;
     }
   </style>
 </head>
 
 <body class="bg-black text-white font-sans">
+  <div class="rainworld"></div>
+  <div class="absolute" >Credit:<a class="text-cyan-500" target="_blank" href="https://www.deviantart.com/xennademonorph/art/Are-you-a-friend-837354263"> Xennademonorph on DeviantArt</a> for Background Art</div>
   <div
     class="min-h-screen flex flex-col items-center justify-center px-4 sm:px-8 md:px-16 py-8 sm:py-16 space-y-8 sm:space-x-8 sm:flex-row">
     <img src="./assets/image.png" alt="Vrchat Image"
@@ -63,7 +76,6 @@
         <img src="./assets/Slugwalk.gif" class="w-10 relative bottom-5 inline-block m-5">
         <p class="inline-block">Also heavily addicted to Rain World and VRChat.</p>
       </div>
-      <small class="block mt-4">Yes, this site was made in less than an hour.</small>
 
       <!-- Social Media Links -->
       <div class="flex flex-wrap justify-center sm:justify-start mt-6">
