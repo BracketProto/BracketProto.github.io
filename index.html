@@ -38,23 +38,70 @@
       left: 0;
       z-index: -2;
     }
-    .rainworld{
-      background: url(./assets/rainworld.png);
-      background-size:cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      z-index: -1;
-      position: fixed;
-      height: 150vh;
-      width: 150vw;
-      opacity: .5;
+    .aspect{
+      aspect-ratio: 16 / 9;
     }
+    .rainworld {
+      position: absolute;
+      min-height: 150vh !important;
+      min-width: 150vw !important;
+      opacity: 0.75;
+      image-rendering: crisp-edges;
+      aspect-ratio: 16 / 9;
+    }
+    
+    .rainworld video {
+      position: absolute;
+      aspect-ratio: 16 / 9;
+      min-height: 100%; /* Ensure video fills the container width */
+      min-width: 100%; /* Ensure video fills the container width */
+    }
+    
+    .poleplant {
+      position: absolute;
+      width: 2.5%;
+      height: 30%;
+      left: 25%;
+      top: 27%;
+      aspect-ratio: 16 / 9;
+      opacity: 0.75;
+      pointer-events: none;
+    }
+    .noodlefly {
+      position: absolute;
+      width: 10%;
+      height: 20%;
+      left: 10%;
+      top: 35%;
+      aspect-ratio: 16 / 9;
+      opacity: 0.75;
+      pointer-events: none;
+    }
+    .centiwing {
+      position: absolute;
+      width: 10%;
+      height: 20%;
+      left: 75%;
+      top: 10%;
+      aspect-ratio: 16 / 9;
+      opacity: 0.75;
+      pointer-events: none;
+      transform: scale(-1, 1);
+    }
+  
   </style>
 </head>
 
 <body class="bg-black text-white font-sans">
-  <div class="rainworld"></div>
-  <small>Credit:<a class="text-cyan-500" target="_blank" href="https://www.deviantart.com/xennademonorph/art/Are-you-a-friend-837354263"> Xennademonorph on DeviantArt</a> for Background Art</small>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/eZ3hZHEM818?si=ePeA-xICqLHCcrDa&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <div class="z-[-1] fixed h-[100%] w-[100%]">
+    <div class="rainworld">
+        <video class="object-fill" muted="true" autoplay="true" src="./assets/Shoreline.mp4"></video>
+        <img class="poleplant" src="./assets/poleplant.gif" />
+        <img class="noodlefly" src="./assets/Noodlefly_idle.gif" />
+        <img class="centiwing" src="./assets/Centiwing.gif" />
+    </div>
+  </div>
   <div
     class="min-h-screen flex flex-col items-center justify-center px-4 sm:px-8 md:px-16 py-8 sm:py-16 space-y-8 sm:space-x-8 sm:flex-row">
     <img src="./assets/image.png" alt="Vrchat Image"
