@@ -31,41 +31,49 @@
 
   <title>BracketProto</title>
   <style>
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: -2;
+    @font-face {
+      font-family: "RainWorldFont";
+      src: url('./assets/Rodondo.ttf');
     }
-    .aspect{
+
+    body>* {
+      font-family: "RainWorldFont";
+      letter-spacing: 2.5px;
+      user-select: none;
+    }
+
+    .aspect {
       aspect-ratio: 16 / 9;
     }
+
     .rainworld {
       position: absolute;
       min-height: 150vh !important;
       min-width: 150vw !important;
       opacity: 0.75;
-      image-rendering: crisp-edges;
+      image-rendering: pixelated;
       aspect-ratio: 16 / 9;
     }
-    
+
     .rainworld video {
       position: absolute;
       aspect-ratio: 16 / 9;
-      min-height: 100%; /* Ensure video fills the container width */
-      min-width: 100%; /* Ensure video fills the container width */
+      min-height: 100%;
+      min-width: 100%;
     }
-    
+
     .poleplant {
       position: absolute;
       width: 2.5%;
       height: 30%;
       left: 25%;
-      top: 27%;
+      top: 26.85%;
       aspect-ratio: 16 / 9;
-      opacity: 0.75;
+      opacity: 0.5;
       pointer-events: none;
+      image-rendering: pixelated;
     }
+
     .noodlefly {
       position: absolute;
       width: 10%;
@@ -75,7 +83,9 @@
       aspect-ratio: 16 / 9;
       opacity: 0.75;
       pointer-events: none;
+      image-rendering: pixelated;
     }
+
     .centiwing {
       position: absolute;
       width: 10%;
@@ -86,35 +96,42 @@
       opacity: 0.75;
       pointer-events: none;
       transform: scale(-1, 1);
+      image-rendering: pixelated;
     }
-  
   </style>
 </head>
 
 <body class="bg-black text-white font-sans">
-  <div class="z-[-1] fixed h-[100%] w-[100%]">
+  <div class="z-[-1] fixed h-[100vh] w-[100vw]">
     <div class="rainworld">
-        <video class="object-fill" muted="true" autoplay="true" src="./assets/Shoreline.mp4"></video>
-        <img class="poleplant" src="./assets/poleplant.gif" />
-        <img class="noodlefly" src="./assets/Noodlefly_idle.gif" />
-        <img class="centiwing" src="./assets/Centiwing.gif" />
+      <video loop class="object-fill" muted="true" autoplay="true" src="./assets/Shoreline.mp4"></video>
+      <img class="poleplant" src="./assets/poleplant.gif" />
+      <img class="noodlefly" src="./assets/Noodlefly_idle.gif" />
+      <img class="centiwing" src="./assets/Centiwing.gif" />
     </div>
   </div>
+  
+  <div>
+    <audio class="inline-block" loop controls src="./assets/Coral Caves - Threat Theme (Rain World).mp3"></audio>
+    <h1 class="inline-block font-black">Favorite Threat Music: Rain World: The Watcher OST - Threat - Coral Caves</h1>
+  </div>
+
+
   <div
     class="min-h-screen flex flex-col items-center justify-center px-4 sm:px-8 md:px-16 py-8 sm:py-16 space-y-8 sm:space-x-8 sm:flex-row">
     <img src="./assets/image.png" alt="Vrchat Image"
-      class="relative rounded-lg shadow-xl w-[35%] sm:w-[25%] h-auto object-cover">
+      class="relative rounded-lg w-[35%] sm:w-[25%] h-[50vh] object-contain">
 
     <!-- Introduction -->
     <div class="flex flex-col items-center sm:items-start max-w-xl text-center sm:text-left">
-      <h1 class="text-3xl sm:text-4xl font-semibold leading-tight">Hello there!</h1>
+      <h1 class="text-3xl sm:text-4xl font-black">Hello there!</h1>
       <div class="text-base sm:text-lg mt-4">
         <p>
           I'm Bracket (or BracketProto) and i go by any pronouns (He/She/They) 🏳️‍⚧️!
         </p>
         <p class="mt-4">
           I'm a Software Developer from the UK with a focus on Web Development, Game
-          Development, and Graphics Programming. 
+          Development, and Graphics Programming.
         </p>
       </div>
       <div class="inline-block mt-6 sm:mt-8 ">
@@ -151,6 +168,7 @@
       </div>
     </div>
   </div>
+  <img class="h-[64px] mr-5 float-right" src="./assets/watcher.png"><h1 class="float-right">Lets have a watch</h1>
 </body>
 
 </html>
