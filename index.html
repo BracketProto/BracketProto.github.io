@@ -1,232 +1,315 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script defer src="./assets/main.js"></script>
+        <script src="https://cdn.dashjs.org/latest/modern/umd/dash.all.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/plyr@3.7.0/dist/plyr.css"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/plyr@3.7.0/dist/plyr.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+            integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script defer src="./assets/main.js"></script>
-  <script src="https://cdn.dashjs.org/latest/modern/umd/dash.all.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.7.0/dist/plyr.css" />
-  <script src="https://cdn.jsdelivr.net/npm/plyr@3.7.0/dist/plyr.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <meta
+            name="description"
+            content="BracketProto - Software Developer specializing in Web Development, Game Development, and Graphics Programming."
+        />
+        <meta
+            name="keywords"
+            content="BracketProto, Software Developer, Web Development, Game Development, Graphics Programming"
+        />
+        <meta name="author" content="BracketProto" />
+        <link rel="canonical" href="https://bracketproto.com" />
 
-  <meta name="description"
-    content="BracketProto - Software Developer specializing in Web Development, Game Development, and Graphics Programming.">
-  <meta name="keywords"
-    content="BracketProto, Software Developer, Web Development, Game Development, Graphics Programming">
-  <meta name="author" content="BracketProto">
-  <link rel="canonical" href="https://bracketproto.com">
+        <meta property="og:title" content="BracketProto" />
+        <meta
+            property="og:description"
+            content="Hello there! I'm BracketProto, a Software Developer from the UK specializing in Web & Game Development."
+        />
+        <meta property="og:url" content="https://bracketproto.com" />
+        <meta property="og:type" content="website" />
 
-  <meta property="og:title" content="BracketProto">
-  <meta property="og:description"
-    content="Hello there! I'm BracketProto, a Software Developer from the UK specializing in Web & Game Development.">
-  <meta property="og:url" content="https://bracketproto.com">
-  <meta property="og:type" content="website">
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="BracketProto" />
+        <meta
+            name="twitter:description"
+            content="Hello there! I'm BracketProto, a Software Developer from the UK specializing in Web & Game Development."
+        />
+        <meta name="twitter:site" content="@BracketProto" />
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="BracketProto">
-  <meta name="twitter:description"
-    content="Hello there! I'm BracketProto, a Software Developer from the UK specializing in Web & Game Development.">
-  <meta name="twitter:site" content="@BracketProto">
+        <title>BracketProto</title>
+        <script defer>
+            document.addEventListener("DOMContentLoaded", () => {
+                const source =
+                    "./assets/Coral Caves - Threat Theme (Rain World).mp3";
+                const dash = dashjs.MediaPlayer().create();
+                const audio = document.querySelector("audio");
+                dash.initialize(audio, source, true);
+                const player = new Plyr(audio, {
+                    captions: { active: false, update: false },
+                });
+                player.media.loop = true;
+                window.player = player;
+                window.dash = dash;
+            });
+        </script>
+        <style>
+            @font-face {
+                font-family: "RainWorldFont";
+                src: url("./assets/rodondo.ttf");
+            }
 
-  <title>BracketProto</title>
-    <script defer>
-      document.addEventListener('DOMContentLoaded', () => {
-        const source = './assets/Coral Caves - Threat Theme (Rain World).mp3';
-        const dash = dashjs.MediaPlayer().create();
-        const audio = document.querySelector('audio');
-        dash.initialize(audio, source, true);
-        const player = new Plyr(audio, {captions: {active: false, update: false}});
-        player.media.loop = true;
-        window.player = player;
-        window.dash = dash;
-      });
-    </script>
-  <style>
-    @font-face {
-      font-family: "RainWorldFont";
-      src: url('./assets/rodondo.ttf');
-    }
+            body > * {
+                font-family: "RainWorldFont";
+                user-select: none;
+            }
 
-    body>* {
-      font-family: "RainWorldFont";
-      user-select: none;
-    }
+            .aspect {
+                aspect-ratio: 16 / 9;
+            }
 
-    .aspect {
-      aspect-ratio: 16 / 9;
-    }
+            .rainworld {
+                position: absolute;
+                min-height: 150vh !important;
+                min-width: 150vw !important;
+                image-rendering: pixelated;
+                aspect-ratio: 16 / 9;
+            }
 
-    .rainworld {
-      position: absolute;
-      min-height: 150vh !important;
-      min-width: 150vw !important;
-      image-rendering: pixelated;
-      aspect-ratio: 16 / 9;
-    }
+            .rainworld video {
+                position: absolute;
+                aspect-ratio: 16 / 9;
+                min-height: 100%;
+                min-width: 100%;
+                opacity: 0.75;
+            }
 
-    .rainworld video {
-      position: absolute;
-      aspect-ratio: 16 / 9;
-      min-height: 100%;
-      min-width: 100%;
-      opacity: 0.75;
-    }
+            .garbageworm {
+                position: absolute;
+                width: 10%;
+                height: 30%;
+                left: 21%;
+                top: 26.5%;
+                aspect-ratio: 16 / 9;
+                pointer-events: none;
+                image-rendering: pixelated;
+                opacity: 0.75;
+            }
+            .garbageworm2 {
+                position: absolute;
+                width: 10%;
+                height: 25%;
+                left: 35%;
+                top: 33.5%;
+                aspect-ratio: 16 / 9;
+                pointer-events: none;
+                image-rendering: pixelated;
+                opacity: 0.75;
+                transform: scale(-1, 1);
+            }
 
-    .garbageworm {
-      position: absolute;
-      width: 10%;
-      height: 30%;
-      left: 21%;
-      top: 26.5%;
-      aspect-ratio: 16 / 9;
-      pointer-events: none;
-      image-rendering: pixelated;
-      opacity: 0.75;
-    }
-    .garbageworm2 {
-      position: absolute;
-      width: 10%;
-      height: 25%;
-      left: 35%;
-      top: 33.5%;
-      aspect-ratio: 16 / 9;
-      pointer-events: none;
-      image-rendering: pixelated;
-      opacity: 0.75;
-      transform: scale(-1, 1);
-    }
+            .noodlefly {
+                position: absolute;
+                width: 10%;
+                height: 30%;
+                left: 10%;
+                top: 25%;
+                aspect-ratio: 16 / 9;
+                pointer-events: none;
+                image-rendering: pixelated;
+                opacity: 0.75;
+            }
 
-    .noodlefly {
-      position: absolute;
-      width: 10%;
-      height: 30%;
-      left: 10%;
-      top: 25%;
-      aspect-ratio: 16 / 9;
-      pointer-events: none;
-      image-rendering: pixelated;
-      opacity: 0.75;
-    }
+            .aquapede {
+                position: absolute;
+                width: 20%;
+                height: 15%;
+                left: 65%;
+                top: 65%;
+                aspect-ratio: 16 / 9;
+                pointer-events: none;
+                image-rendering: pixelated;
+                opacity: 0.25;
+                transform: scale(-1, 1) rotate(-45deg);
+                filter: brightness(10%);
+                animation-name: move;
+                animation-duration: 25s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+            @keyframes move {
+                0% {
+                    left: 100%;
+                    top: 100%;
+                    transform: scale(-1, 1) rotate(-50deg);
+                }
+                25% {
+                    top: 65%;
+                    transform: scale(-1, 1) rotate(15deg);
+                }
+                50% {
+                    transform: scale(-1, 1) rotate(50deg);
+                }
+                100% {
+                    left: -25%;
+                    top: 100%;
+                }
+            }
+            html {
+                --plyr-audio-controls-background: #161616;
+            }
+        </style>
+    </head>
 
-    .aquapede {
-      position: absolute;
-      width: 20%;
-      height: 15%;
-      left: 65%;
-      top: 65%;
-      aspect-ratio: 16 / 9;
-      pointer-events: none;
-      image-rendering: pixelated;
-      opacity: 0.25;
-      transform: scale(-1, 1) rotate(-45deg);
-      filter: brightness(10%);
-      animation-name: move;
-      animation-duration: 25s;
-      animation-iteration-count: infinite;
-      animation-timing-function: linear;
-    }
-    @keyframes move{
-      0%{
-        left: 100%;
-        top: 100%;
-        transform: scale(-1, 1) rotate(-50deg);
-      }
-      25%{
-        top: 65%;
-        transform: scale(-1, 1) rotate(15deg);
-      }
-      50%{
-        transform: scale(-1, 1) rotate(50deg);
-      }
-      100%{
-        left: -25%;
-        top: 100%;
-      }
-    }
-    html{
-      --plyr-audio-controls-background: #161616;
-    }
+    <body class="bg-black text-white font-sans">
+        <div class="z-[-1] fixed h-[100vh] w-[100vw]">
+            <div class="rainworld">
+                <video
+                    controls
+                    loop
+                    class="object-fill"
+                    muted="true"
+                    autoplay="true"
+                    src="./assets/Shoreline.mp4"
+                ></video>
+                <img
+                    class="garbageworm"
+                    loading="lazy"
+                    src="./assets/garbage_worm.gif"
+                />
+                <img
+                    class="garbageworm2"
+                    loading="lazy"
+                    src="./assets/garbage_worm.gif"
+                />
+                <img
+                    class="noodlefly"
+                    loading="lazy"
+                    src="./assets/Noodlefly_idle.gif"
+                />
+                <img
+                    class="aquapede"
+                    loading="lazy"
+                    src="./assets/aquapede.gif"
+                />
+            </div>
+        </div>
 
-  </style>
-</head>
+        <div
+            class="min-h-screen flex flex-col items-center justify-center px-4 sm:px-8 md:px-16 py-8 sm:py-16 space-y-8 sm:space-x-8 sm:flex-row"
+        >
+            <img
+                src="./assets/image.png"
+                alt="Vrchat Image"
+                class="relative rounded-lg w-[35%] sm:w-[25%] h-[50vh] object-contain"
+            />
 
-<body class="bg-black text-white font-sans">
-  <div class="z-[-1] fixed h-[100vh] w-[100vw]">
-    <div class="rainworld">
-      <video controls loop class="object-fill" muted="true" autoplay="true" src="./assets/Shoreline.mp4"></video>
-      <img class="garbageworm" loading="lazy"  src="./assets/garbage_worm.gif" />
-      <img class="garbageworm2" loading="lazy"  src="./assets/garbage_worm.gif" />
-      <img class="noodlefly" loading="lazy"  src="./assets/Noodlefly_idle.gif" />
-      <img class="aquapede" loading="lazy"  src="./assets/aquapede.gif" />
-    </div>
-  </div>
+            <!-- Introduction -->
+            <div
+                class="flex flex-col items-center sm:items-start max-w-xl text-center sm:text-left"
+            >
+                <h1 class="text-3xl sm:text-4xl font-black">Hello there!</h1>
+                <div class="text-base sm:text-lg mt-4">
+                    <p>
+                        I'm Bracket (or BracketProto) and i go by any pronouns
+                        (He/She/They) 🏳️‍⚧️!
+                    </p>
+                    <p class="mt-4">
+                        I'm a Software Developer from the UK with a focus on Web
+                        Development, Game Development, and Graphics Programming.
+                    </p>
+                </div>
+                <div class="inline-block mt-6 sm:mt-8">
+                    <img
+                        src="./assets/Slugwalk.gif"
+                        class="w-10 relative bottom-5 inline-block m-5"
+                    />
+                    <p class="inline-block">
+                        Also heavily addicted to Rain World and VRChat.
+                    </p>
+                </div>
 
-  <div
-    class="min-h-screen flex flex-col items-center justify-center px-4 sm:px-8 md:px-16 py-8 sm:py-16 space-y-8 sm:space-x-8 sm:flex-row">
-    <img src="./assets/image.png" alt="Vrchat Image"
-      class="relative rounded-lg w-[35%] sm:w-[25%] h-[50vh] object-contain">
-
-    <!-- Introduction -->
-    <div class="flex flex-col items-center sm:items-start max-w-xl text-center sm:text-left">
-      <h1 class="text-3xl sm:text-4xl font-black">Hello there!</h1>
-      <div class="text-base sm:text-lg mt-4">
-        <p>
-          I'm Bracket (or BracketProto) and i go by any pronouns (He/She/They) 🏳️‍⚧️!
-        </p>
-        <p class="mt-4">
-          I'm a Software Developer from the UK with a focus on Web Development, Game
-          Development, and Graphics Programming.
-        </p>
-      </div>
-      <div class="inline-block mt-6 sm:mt-8 ">
-        <img src="./assets/Slugwalk.gif" class="w-10 relative bottom-5 inline-block m-5">
-        <p class="inline-block">Also heavily addicted to Rain World and VRChat.</p>
-      </div>
-
-      <!-- Social Media Links -->
-      <div class="flex flex-wrap justify-center sm:justify-start mt-6">
-        <a href="https://www.youtube.com/bracketproto" target="_blank"
-          class="m-1 bg-red-600 text-white w-12 h-12 flex items-center justify-center rounded-full border-2 border-white shadow-lg hover:bg-red-700 transition">
-          <i class="fab fa-youtube text-xl"></i>
-        </a>
-        <a href="https://x.com/BracketProto" target="_blank"
-          class="m-1 bg-black text-white w-12 h-12 flex items-center justify-center rounded-full border-2 border-white shadow-lg hover:bg-gray-800 transition">
-          <i class="fab fa-x text-xl"></i>
-        </a>
-        <a href="https://vrchat.com/home/user/usr_2607cdf3-ee12-4d51-b8d3-6b0bcdc96cf6" target="_blank"
-          class="m-1 bg-[#064b5c] text-white w-12 h-12 flex items-center justify-center rounded-full border-2 border-white shadow-lg hover:bg-[#07242b] transition">
-          <img src="./assets/Vrchat.png" alt="VRChat" class="w-5 h-5 object-contain">
-        </a>
-        <a href="https://discordapp.com/users/530036821707718678" target="_blank"
-          class="m-1 bg-indigo-600 text-white w-12 h-12 flex items-center justify-center rounded-full border-2 border-white shadow-lg hover:bg-indigo-700 transition">
-          <i class="fab fa-discord text-xl"></i>
-        </a>
-        <a href="https://github.com/OCSYT" target="_blank"
-          class="m-1 bg-gray-800 text-white w-12 h-12 flex items-center justify-center rounded-full border-2 border-white shadow-lg hover:bg-gray-900 transition">
-          <i class="fab fa-github text-xl"></i>
-        </a>
-        <a href="https://steamcommunity.com/id/BracketProto" target="_blank"
-          class="m-1 bg-gray-600 text-white w-12 h-12 flex items-center justify-center rounded-full border-2 border-white shadow-lg hover:bg-gray-700 transition">
-          <i class="fab fa-steam text-xl"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-  <div>
-    <img class="h-[64px] mr-5 inline-block" src="./assets/watcher.png">
-    <h1 class="inline-block">Lets have a watch</h1>
-  </div>
-  <div class="inline-block">
-    <h1 class="inline-block font-black">Favorite Threat Music: Threat - Outer Expanse - Sunken Pier</h1>
-    <audio id="player" controls>
-      <source loading="lazy"  src="./assets/Rain_World_-_Threat_-_Sunken_Pier.mp3" type="audio/mp3">
-      Your browser does not support the audio element.
-  </audio>
-  </div>
-</body>
-
+                <!-- Social Media Links -->
+                <div
+                    class="flex flex-wrap justify-center sm:justify-start mt-6"
+                >
+                    <a
+                        href="https://www.youtube.com/bracketproto"
+                        target="_blank"
+                        class="m-1 bg-red-600 text-white w-12 h-12 flex items-center justify-center rounded-full border-2 border-white shadow-lg hover:bg-red-700 transition"
+                    >
+                        <i class="fab fa-youtube text-xl"></i>
+                    </a>
+                    <a
+                        href="https://x.com/BracketProto"
+                        target="_blank"
+                        class="m-1 bg-black text-white w-12 h-12 flex items-center justify-center rounded-full border-2 border-white shadow-lg hover:bg-gray-800 transition"
+                    >
+                        <i class="fab fa-x text-xl"></i>
+                    </a>
+                    <a
+                        href="https://vrchat.com/home/user/usr_2607cdf3-ee12-4d51-b8d3-6b0bcdc96cf6"
+                        target="_blank"
+                        class="m-1 bg-[#064b5c] text-white w-12 h-12 flex items-center justify-center rounded-full border-2 border-white shadow-lg hover:bg-[#07242b] transition"
+                    >
+                        <img
+                            src="./assets/Vrchat.png"
+                            alt="VRChat"
+                            class="w-5 h-5 object-contain"
+                        />
+                    </a>
+                    <a
+                        href="https://discordapp.com/users/530036821707718678"
+                        target="_blank"
+                        class="m-1 bg-indigo-600 text-white w-12 h-12 flex items-center justify-center rounded-full border-2 border-white shadow-lg hover:bg-indigo-700 transition"
+                    >
+                        <i class="fab fa-discord text-xl"></i>
+                    </a>
+                    <a
+                        href="https://github.com/OCSYT"
+                        target="_blank"
+                        class="m-1 bg-gray-800 text-white w-12 h-12 flex items-center justify-center rounded-full border-2 border-white shadow-lg hover:bg-gray-900 transition"
+                    >
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a
+                        href="https://steamcommunity.com/id/BracketProto"
+                        target="_blank"
+                        class="m-1 bg-gray-600 text-white w-12 h-12 flex items-center justify-center rounded-full border-2 border-white shadow-lg hover:bg-gray-700 transition"
+                    >
+                        <i class="fab fa-steam text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <img
+                class="h-[64px] mr-5 inline-block"
+                src="./assets/watcher.png"
+            />
+            <h1 class="inline-block">Lets have a watch</h1>
+        </div>
+        <div class="inline-block">
+            <h1 class="inline-block font-black">
+                Favorite Threat Music: Threat - Outer Expanse - Sunken Pier
+            </h1>
+            <audio id="player" controls>
+                <source
+                    loading="lazy"
+                    src="./assets/Rain_World_-_Threat_-_Sunken_Pier.mp3"
+                    type="audio/mp3"
+                />
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </body>
 </html>
